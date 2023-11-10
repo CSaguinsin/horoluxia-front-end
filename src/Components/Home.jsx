@@ -6,30 +6,13 @@ import HeroSection from './HeroSection';
 import CompanyLogo from '../assets/Logo/horoluxiaLogo.png'
 
 import Add10 from '../assets/Pictures/Add10.jpg';
-import Add11 from '../assets/Pictures/Add11.jpg';
-import Add12 from '../assets/Pictures/Add12.jpeg';
-import Add13 from '../assets/Pictures/Add13.jpg';
-import Add14 from '../assets/Pictures/Add14.jpg';
-import Add15 from '../assets/Pictures/Add15.jpg';
-import Add16 from '../assets/Pictures/Add16.jpg';
 
-// Kids Watch
-import KidsWatch1 from '../assets/KidsWatch/KidsWatch1.jpg';
-import KidsWatch2 from '../assets/KidsWatch/KidsWatch2.jpg';
-import KidsWatch3 from '../assets/KidsWatch/KidsWatch3.jpg';
-import KidsWatch4 from '../assets/KidsWatch/KidsWatch4.jpg';
 
-// Women Watch
-import WomensWatch1 from '../assets/WomensWatch/WomensWatch1.jpg';
-import WomensWatch2 from '../assets/WomensWatch/WomensWatch2.jpg';
-import WomensWatch3 from '../assets/WomensWatch/WomensWatch3.jpg';
-import WomensWatch4 from '../assets/WomensWatch/WomensWatch4.jpg';
 
-// Men Watch
-import MenWatch1 from '../assets/MensWatch/MensWatches1.jpg';
-import MenWatch2 from '../assets/MensWatch/MensWatches2.jpg';
-import MenWatch3 from '../assets/MensWatch/MensWatches3.jpg';
-import MenWatch4 from '../assets/MensWatch/MensWatches4.jpg';
+import LimitedEdition from './LimitedEdition';
+import Men from './Men';
+import Women from './Women';
+import Kids from './Kids';
 
 
 function Home() {
@@ -38,6 +21,7 @@ function Home() {
     padding: '0 50px',
     display: 'flex',
     flexDirection: 'row',
+    paddingTop: '20px',
   };
 
   const Img = {
@@ -70,7 +54,7 @@ function Home() {
   return (
     <>
         <div className="header">
-            <p>FREE SHIPPING UNTIL JANUARY 2025</p>
+            <p>Free Shipping until 2025</p>
         </div>
         <Navbar />
         <HeroSection />
@@ -78,45 +62,33 @@ function Home() {
         <section style={Sections}> 
             <h1 style={SeeMoreTitle}>Limited Editions</h1>
               <div style={limited}>
-                  <img src={Add10} alt="Add1"  style={Img}/>
-                  <img src={Add11} alt="Add2" style={Img}/>
-                  <img src={Add12} alt="Add3" style={Img}/>
-                  <img src={Add13} alt="Add4" style={Img}/>
+                  <LimitedEdition />
               </div>
         </section>
 
         <section style={Sections}> 
             <h1 style={SeeMoreTitle}>Men</h1>
               <div style={limited}>
-                    <img src={MenWatch1} alt="Add1" style={SecondStyleWatch}/>
-                    <img src={MenWatch2} alt="Add2" style={SecondStyleWatch}/>
-                    <img src={MenWatch3} alt="Add3" style={SecondStyleWatch}/>
-                    <img src={MenWatch4} alt="Add4" style={SecondStyleWatch}/>
+                  <Men />
               </div>
         </section>
 
         <section style={Sections}>  
             <h1 style={SeeMoreTitle}>Women</h1>
                <div style={limited}>
-                  <img src={WomensWatch1} alt="Add1"  style={SecondStyleWatch}/>
-                  <img src={WomensWatch2} alt="Add2" style={SecondStyleWatch}/>
-                  <img src={WomensWatch3} alt="Add3" style={SecondStyleWatch}/>
-                  <img src={WomensWatch4} alt="Add4" style={SecondStyleWatch}/>
+                  <Women />
               </div>
         </section>
 
         <section style={Sections}> 
             <h1 style={SeeMoreTitle}>Kids</h1>
               <div style={limited}>
-                    <img src={KidsWatch1} alt="Add1"  style={Img}/>
-                    <img src={KidsWatch2} alt="Add2" style={Img}/>
-                    <img src={KidsWatch3} alt="Add3" style={Img}/>
-                    <img src={KidsWatch4} alt="Add4" style={Img}/>
+                  <Kids />
               </div>
         </section>
 
         <section>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen">
               <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={Add10} />
                 <div>
@@ -132,34 +104,6 @@ function Home() {
             </div>
         </section>
 
-        <section>
-              <footer className="footer p-10 bg-base-200 text-base-content">
-                <aside  id='Fonts'>
-                  <img src={CompanyLogo} className="logo" />
-                  <p>Horoluxia<br/>Providing reliable watch since 1992</p>
-                </aside> 
-                <nav>
-                  <header className="footer-title"  id='Fonts'>Services</header> 
-                  <a className="link link-hover"  id='Fonts'>Branding</a> 
-                  <a className="link link-hover"  id='Fonts'>Design</a> 
-                  <a className="link link-hover"  id='Fonts'>Marketing</a> 
-                  <a className="link link-hover"  id='Fonts'>Advertisement</a>
-                </nav> 
-                <nav>
-                  <header className="footer-title"  id='Fonts'>Company</header> 
-                  <a className="link link-hover"  id='Fonts'>About us</a> 
-                  <a className="link link-hover"  id='Fonts'>Contact</a> 
-                  <a className="link link-hover"  id='Fonts'>Jobs</a> 
-                  <a className="link link-hover"  id='Fonts'>Press kit</a>
-                </nav> 
-                <nav>
-                  <header className="footer-title"  id='Fonts'>Legal</header> 
-                  <a className="link link-hover"  id='Fonts'>Terms of use</a> 
-                  <a className="link link-hover"  id='Fonts'>Privacy policy</a> 
-                  <a className="link link-hover"  id='Fonts'>Cookie policy</a>
-                </nav>
-              </footer>
-        </section>
     </>
   )
 }

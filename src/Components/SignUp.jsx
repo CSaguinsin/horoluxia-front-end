@@ -6,7 +6,7 @@ function SignUp() {
   return (
     <>
       <div className="header">
-        <p>FREE SHIPPING UNTIL JANUARY 2025</p>
+      <p>Free Shipping until 2025</p>
       </div>
       <Navbar />
       <section className="bg-white-50 dark:bg-gray-900">
