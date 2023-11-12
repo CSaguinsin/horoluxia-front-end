@@ -2,11 +2,13 @@ import React from 'react';
 import Account from '../assets/Logo/account.png'
 import AddtoCart from '../assets/Logo/AddToCart.png' 
 import CompanyLogo from '../assets/Logo/horoluxiaLogo.png'
+import Horo from '../assets/Logo/horoluxia.png'
 import { Link } from 'react-router-dom';
+import '../Css/Style.css';
 
 function Navbar() {
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav  className="border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <div className="flex items-center">
           <ul className="flex space-x-8">
@@ -56,7 +58,7 @@ function Navbar() {
         </div>
         <div className="flex items-center" style={{ paddingRight: '5rem' }}> 
           <a className="flex items-center">
-          <img src={CompanyLogo} className="logo" alt="Flowbite Logo" />
+          <img src={Horo} className="logo" alt="Flowbite Logo" />
           </a>
         </div>
         <button

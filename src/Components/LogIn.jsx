@@ -1,13 +1,15 @@
 import React from 'react'
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
+import Countdown from './Countdown';
 
 function LogIn() {
   return (
     <>
-        <div className="header">
-        <p>Free Shipping until 2025</p>
-        </div>
+      <header class="header">
+        <p>Free shipping until 2025</p>
+        <Countdown />
+      </header>
       <Navbar />
       <section className="bg-white-50 dark:bg-gray-900">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">

@@ -81,7 +81,7 @@ const CountdownItem = ({ num, text, fontSize, height }) => {
           </motion.span>
         </AnimatePresence>
       </div>
-
+      <p id="Fonts">Free shipping until 2025</p>
     </div>
   );
 };

@@ -21,7 +21,7 @@ import Add16 from '../assets/Pictures/Add16.jpg';
 
 const HeroSection = () => {
   return (
-    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+    <section className=" ulti w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
       <div>
         <h3 className="text-4xl md:text-6xl font-semibold" id="HeroTitle">
           Grab Up To 50% Off On Selected Watch

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useEffect, useRef, useState } from "react";
 import '../Css/Style.css';
 import Navbar from './Navbar';
@@ -35,28 +34,28 @@ function Home() {
 
   const Sections = {
     marginLeft: '40px',
+    paddingTop: '50px',
   }
 
   const SeeMoreTitle = {
     color: 'black',
-    fontSize: '2rem',
+    fontSize: '3rem',
     fontWeight: 'bold',
     marginLeft: '50px',
     marginTop: '50px',
-    fontFamily: 'Libre Baskerville, serif'
+    fontFamily: 'DM Serif Display, serif'
   };
   
   
   
   return (
     <>
-      <header class="header">
+      <header className="header">
         <p>Free shipping until 2025</p>
         <Countdown />
       </header>
         <Navbar />
-
-    <section className='ulti'>
+    <section>
         <HeroSection />
 
         <section style={Sections}> 
