@@ -4,15 +4,12 @@ import '../Css/Style.css';
 import Navbar from './Navbar';
 import HeroSection from './HeroSection';
 import CompanyLogo from '../assets/Logo/horoluxiaLogo.png'
-
 import Add10 from '../assets/Pictures/Add10.jpg';
-
-
-
 import LimitedEdition from './LimitedEdition';
 import Men from './Men';
 import Women from './Women';
 import Kids from './Kids';
+import Countdown from './Countdown';
 
 
 function Home() {
@@ -53,10 +50,13 @@ function Home() {
   
   return (
     <>
-        <div className="header">
-            <p>Free Shipping until 2025</p>
-        </div>
+      <header class="header">
+        <p>Free shipping until 2025</p>
+        <Countdown />
+      </header>
         <Navbar />
+
+    <section className='ulti'>
         <HeroSection />
 
         <section style={Sections}> 
@@ -103,7 +103,7 @@ function Home() {
               </div>
             </div>
         </section>
-
+        </section>
     </>
   )
 }
