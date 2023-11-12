@@ -45,9 +45,7 @@ function Home() {
     marginTop: '50px',
     fontFamily: 'DM Serif Display, serif'
   };
-  
-  
-  
+
   return (
     <>
       <header className="header">
