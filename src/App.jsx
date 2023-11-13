@@ -6,6 +6,8 @@ import LogIn from './Components/LogIn'
 import Navbar from './Components/Navbar'
 import SignUp from './Components/SignUp'
 import Footer from './Components/Footer';
+import WomenWatchTab from './Components/WomenWatchTab';
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/LogIn' element={<LogIn />} />
         <Route path='/SignUp' element={<SignUp />} />
+        <Route path='/WomenWatchTab' element={<WomenWatchTab />} />
     </Routes>
     <Footer />
   </Router>
