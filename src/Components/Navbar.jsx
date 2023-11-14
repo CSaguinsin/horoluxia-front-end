@@ -9,7 +9,7 @@ import '../Css/Style.css';
 function Navbar() {
   return (
     <nav  className="border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto">
         <div className="flex items-center">
           <ul className="flex space-x-8">
             <li>
