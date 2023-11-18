@@ -8,7 +8,7 @@ import SignUp from './Components/SignUp'
 import Footer from './Components/Footer';
 import WomenWatchTab from './Components/WomenWatchTab';
 import NewsLetter from './Components/NewsLetter';
-
+import KidsWatchTab from './Components/KidsWatchTab';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route path='/LogIn' element={<LogIn />} />
         <Route path='/SignUp' element={<SignUp />} />
         <Route path='/WomenWatchTab' element={<WomenWatchTab />} />
+        <Route path ='/KidsWatchTab' element={<KidsWatchTab />} />
     </Routes>
     <NewsLetter />
     <Footer />

@@ -49,12 +49,14 @@ function Navbar() {
               </Link>
             </li>
             <li>
+            <Link to='/KidsWatchTab' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
               <a
                 href="#"
-                className="text-gray-900 hover-bg-gray-100 hover-text-blue-700 dark-hover-bg-gray-700 dark-hover-text-white"
+                className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
                 id='Fonts'>
                 Kids
               </a>
+              </Link>
             </li>
           </ul>
         </div>

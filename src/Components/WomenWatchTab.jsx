@@ -36,7 +36,7 @@ import WomensGraphic_4 from '../assets/WomensWatch/GraphicDesign/WomensGraphic_4
 
 function WomenWatchTab() {
     const ImgSize = {
-        height: '50rem',
+        height: '40rem',
     }
     const SeeMoreTitle = {
         color: 'black',
