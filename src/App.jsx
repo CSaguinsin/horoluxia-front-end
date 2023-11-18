@@ -7,6 +7,7 @@ import Navbar from './Components/Navbar'
 import SignUp from './Components/SignUp'
 import Footer from './Components/Footer';
 import WomenWatchTab from './Components/WomenWatchTab';
+import NewsLetter from './Components/NewsLetter';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/SignUp' element={<SignUp />} />
         <Route path='/WomenWatchTab' element={<WomenWatchTab />} />
     </Routes>
+    <NewsLetter />
     <Footer />
   </Router>
   )

@@ -50,6 +50,7 @@ function WomenWatchTab() {
       const Sections = {
         marginLeft: '40px',
         paddingTop: '50px',
+        paddingBottom: '50px',
       }
         const ImgStyle = {
           height: '30rem',
@@ -141,7 +142,7 @@ function WomenWatchTab() {
                     <CardBody>
                         <div className="mb-2 flex items-center justify-between">
                         <Typography color="blue-gray" className="font-medium">
-                            Apple AirPods
+                        Radiant Elegance
                         </Typography>
                         <Typography color="blue-gray" className="font-medium">
                             $95.00
@@ -179,7 +180,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Serenity Timepiece
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -216,7 +217,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Aurora Blossom Watch
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -253,7 +254,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Graceful Glamour
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -297,7 +298,7 @@ function WomenWatchTab() {
                     <CardBody>
                         <div className="mb-2 flex items-center justify-between">
                         <Typography color="blue-gray" className="font-medium">
-                            Apple AirPods
+                        Luna Sparkle Watch
                         </Typography>
                         <Typography color="blue-gray" className="font-medium">
                             $95.00
@@ -335,7 +336,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Enchanting Essence Timepiece
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -372,7 +373,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Opulent Orchid Watch
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -409,7 +410,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Empress Jewel Timepiece
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -453,7 +454,7 @@ function WomenWatchTab() {
                     <CardBody>
                         <div className="mb-2 flex items-center justify-between">
                         <Typography color="blue-gray" className="font-medium">
-                            Apple AirPods
+                        Celestial Charm Watch
                         </Typography>
                         <Typography color="blue-gray" className="font-medium">
                             $95.00
@@ -491,7 +492,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Twilight Grace Watch
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -528,7 +529,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Azure Dreamtime
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -565,7 +566,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Pearlized Precision Watch
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -607,7 +608,7 @@ function WomenWatchTab() {
                     <CardBody>
                         <div className="mb-2 flex items-center justify-between">
                         <Typography color="blue-gray" className="font-medium">
-                            Apple AirPods
+                        Mystique Mirage Timepiece
                         </Typography>
                         <Typography color="blue-gray" className="font-medium">
                             $95.00
@@ -645,7 +646,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Blossom Cascade Watch
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -682,7 +683,7 @@ function WomenWatchTab() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Oceanic Opal Timepiece
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
