@@ -23,12 +23,14 @@ function Navbar() {
               </Link>
             </li>
             <li>
+            <Link to='/LimitedEdition' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
               <a
                 href="#"
                 className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
-             id='Fonts' >
+                id='Fonts'>
                 Limited Edition
               </a>
+              </Link>
             </li>
 
             <Link to='/MenWatchTab' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>

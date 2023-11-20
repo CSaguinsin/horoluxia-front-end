@@ -10,6 +10,7 @@ import WomenWatchTab from './Components/WomenWatchTab';
 import NewsLetter from './Components/NewsLetter';
 import KidsWatchTab from './Components/KidsWatchTab';
 import MenWatchTab from './Components/MenWatchTab';
+import LimitedEditionTab from './Components/LimitedEditionTab';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/WomenWatchTab' element={<WomenWatchTab />} />
         <Route path ='/KidsWatchTab' element={<KidsWatchTab />} />
         <Route path ='/MenWatchTab' element={<MenWatchTab />} />
+        <Route path ='/LimitedEdition' element={<LimitedEditionTab />} />
     </Routes>
     <NewsLetter />
     <Footer />
