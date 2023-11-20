@@ -38,7 +38,7 @@ function LimitedEdition() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Eclipse Embrace
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -76,7 +76,7 @@ function LimitedEdition() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Nebula Nexus
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -113,7 +113,7 @@ function LimitedEdition() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Timeless Odyssey
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
@@ -151,7 +151,7 @@ function LimitedEdition() {
       <CardBody>
         <div className="mb-2 flex items-center justify-between">
           <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
+          Celestial Elegance
           </Typography>
           <Typography color="blue-gray" className="font-medium">
             $95.00
