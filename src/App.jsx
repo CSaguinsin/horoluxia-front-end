@@ -11,14 +11,22 @@ import NewsLetter from './Components/NewsLetter';
 import KidsWatchTab from './Components/KidsWatchTab';
 import MenWatchTab from './Components/MenWatchTab';
 import LimitedEditionTab from './Components/LimitedEditionTab';
+import ForgotPassword from "./Components/ForgotPassword";
+import { ContextProvider } from "./context/ContextProvider";
+import Women from "./Components/Women";
+import ResetPassword from "./Components/ResetPassword";
+
 
 function App() {
   return (
-  <Router>
+    <ContextProvider>
     <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/LogIn' element={<LogIn />} />
         <Route path='/SignUp' element={<SignUp />} />
+        <Route path="/women" element={<Women />} />
+        <Route path="/forgot-password" element={<ForgotPassword/>}/>
+        <Route path="/password-reset/:token" element={<ResetPassword/>}/>
         <Route path='/WomenWatchTab' element={<WomenWatchTab />} />
         <Route path ='/KidsWatchTab' element={<KidsWatchTab />} />
         <Route path ='/MenWatchTab' element={<MenWatchTab />} />
@@ -26,7 +34,7 @@ function App() {
     </Routes>
     <NewsLetter />
     <Footer />
-  </Router>
+    </ContextProvider>
   )
 }
 

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import '../Css/Style.css';
 import Navbar from './Navbar';
 import HeroSection from './HeroSection';
-import CompanyLogo from '../assets/Logo/horoluxiaLogo.png'
+import { useStateContext } from "../context/ContextProvider";
 import Add10 from '../assets/Pictures/Add10.jpg';
 import LimitedEdition from './LimitedEdition';
 import Men from './Men';
@@ -46,7 +46,13 @@ function Home() {
     marginTop: '50px',
     fontFamily: 'DM Serif Display, serif'
   };
-
+  const { user, getUser} = useStateContext();
+  useEffect(() => {
+    if (!user) {
+      getUser();
+    }
+  }, []);
+  
   return (
     <>
       <header className="header">
