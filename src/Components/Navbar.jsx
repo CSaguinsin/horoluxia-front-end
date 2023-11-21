@@ -5,8 +5,16 @@ import CompanyLogo from '../assets/Logo/horoluxiaLogo.png'
 import Horo from '../assets/Logo/horoluxia.png'
 import { Link } from 'react-router-dom';
 import '../Css/Style.css';
+import { useStateContext } from "../context/ContextProvider";
+import { useEffect } from "react";
 
 function Navbar() {
+  const { user, logout, getUser} = useStateContext();
+  useEffect(() => {
+    if (!user) {
+      getUser();
+    }
+  }, []);
   return (
     <nav  className="border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto">
@@ -93,28 +101,35 @@ function Navbar() {
             />
           </svg>
         </button>
-        <Link to='/LogIn' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
-        <a
-          href="#"
-          className="text-gray-900 hover-bg-gray-100 hover-text-blue-700 dark-hover-bg-gray-700 dark-hover-text-white"
-          id='Fonts'
-        >
-          <span style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={Account} className="h-7 mr-3" alt="Flowbite Logo" />
-            Account
-          </span>
-        </a>
-        </Link>
-        <a
-          href="#"
-          className="text-gray-900 hover-bg-gray-100 hover-text-blue-700 dark-hover-bg-gray-700 dark-hover-text-white"
-          id='Fonts'
-        >
-          <span style={{ display: 'flex', alignItems: 'center' }}>
-            <img src={AddtoCart} className="h-7 mr-3" alt="Flowbite Logo" />
-            Add To Cart
-          </span>
-        </a>
+        {user ? (
+          <>
+            <Link>
+              <span style={{ display: "flex", alignItems: "center" }}>
+                <img src={AddtoCart} className="h-7 mr-3" alt="Flowbite Logo" />
+                Cart
+              </span>
+            </Link>
+            <button
+              onClick={logout}
+              className="rounded py-2 pr-4 pl-3 text-black"
+            >
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link
+              to="/LogIn"
+              className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
+              id="Fonts"
+            >
+              <span style={{ display: "flex", alignItems: "center" }}>
+                <img src={Account} className="h-7 mr-3" alt="Flowbite Logo" />
+                Sign Up
+              </span>
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );

@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import '../Css/Style.css';
+import { useStateContext } from "../context/ContextProvider";
+import { useNavigate } from "react-router-dom";
 
 import Add1 from '../assets/Pictures/Add1.jpg';
 import Add2 from '../assets/Pictures/Add2.jpg';
@@ -19,17 +21,34 @@ import Add14 from '../assets/Pictures/Add14.jpg';
 import Add15 from '../assets/Pictures/Add15.jpg';
 import Add16 from '../assets/Pictures/Add16.jpg';
 
+
 const HeroSection = () => {
+  const {userToken, user} = useStateContext();
+  const navigate = useNavigate();
+  const handleBuyNow = ()=> {
+    if (!userToken) {
+      navigate("/login"); 
+    }else{
+      navigate("/LimitedEdition")
+    }
+
+  }
+
   return (
-    <section className=" ulti w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
       <div>
         <h3 className="text-4xl md:text-6xl font-semibold" id="HeroTitle">
           Grab Up To 50% Off On Selected Watch
         </h3>
         <p className="text-base md:text-lg text-slate-700 my-4 md:my-6" id="Fonts">
             Here at Horoluxia we have a wide range of watches for you to choose from.
+          <br />
+            {user?.firstname}
         </p>
-        <button className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+        <button 
+        type="submit"
+        onClick={handleBuyNow}
+        className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
           Buy Now
         </button>
       </div>
