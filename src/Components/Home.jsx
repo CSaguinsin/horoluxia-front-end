@@ -9,7 +9,7 @@ import Men from './Men';
 import Women from './Women';
 import Kids from './Kids';
 import Countdown from './Countdown';
-
+import SearchItem from "./SearchItem";
 
 
 function Home() {
@@ -62,6 +62,7 @@ function Home() {
         <Navbar />
     <section>
         <HeroSection />
+        <SearchItem />
 
         <section style={Sections}> 
             <h1 style={SeeMoreTitle}>Limited Editions</h1>
