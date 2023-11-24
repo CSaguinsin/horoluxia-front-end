@@ -11,7 +11,10 @@ import Women from './Women';
 import Kids from './Kids';
 import Countdown from './Countdown';
 import SearchItem from "./SearchItem";
+<<<<<<< HEAD
 import LastSection from '../assets/Logo/LastSection.png';
+=======
+>>>>>>> dc3e1736396ea69ce38bbe24a1298e05edc47fd4
 
 
 function Home() {
@@ -71,7 +74,11 @@ function Home() {
       <div style={DivBg}>
         <HeroSection />
         <SearchItem />
+<<<<<<< HEAD
       </div>
+=======
+
+>>>>>>> dc3e1736396ea69ce38bbe24a1298e05edc47fd4
         <section style={Sections}> 
             <h1 style={SeeMoreTitle}>
               <Link to='/LimitedEdition'>
