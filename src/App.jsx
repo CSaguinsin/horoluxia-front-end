@@ -15,6 +15,8 @@ import ForgotPassword from "./Components/ForgotPassword";
 import { ContextProvider } from "./context/ContextProvider";
 import Women from "./Components/Women";
 import ResetPassword from "./Components/ResetPassword";
+import AdminHome from './admin/pages/AdminHome';
+
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
         <Route path ='/KidsWatchTab' element={<KidsWatchTab />} />
         <Route path ='/MenWatchTab' element={<MenWatchTab />} />
         <Route path ='/LimitedEdition' element={<LimitedEditionTab />} />
+        {/* <Route path ='/admin' name="Admin" render={(props) => <AdminHome {...props} /> }/> */}
+        <Route path="/admin/*" element={<AdminHome />} />
     </Routes>
     <NewsLetter />
     <Footer />

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from 'react-router-dom';
 import '../Css/Style.css';
 import Navbar from './Navbar';
 import HeroSection from './HeroSection';
@@ -9,7 +10,8 @@ import Men from './Men';
 import Women from './Women';
 import Kids from './Kids';
 import Countdown from './Countdown';
-
+import SearchItem from "./SearchItem";
+import LastSection from '../assets/Logo/LastSection.png';
 
 
 function Home() {
@@ -52,6 +54,11 @@ function Home() {
       getUser();
     }
   }, []);
+
+  const DivBg = {
+    backgroundColor: '#DADDE2',
+    paddingBottom: '50px',
+  };
   
   return (
     <>
@@ -61,51 +68,56 @@ function Home() {
       </header>
         <Navbar />
     <section>
+      <div style={DivBg}>
         <HeroSection />
-
+        <SearchItem />
+      </div>
         <section style={Sections}> 
-            <h1 style={SeeMoreTitle}>Limited Editions</h1>
+            <h1 style={SeeMoreTitle}>
+              <Link to='/LimitedEdition'>
+                Limited Editions
+              </Link>
+            </h1>  
               <div style={limited}>
                   <LimitedEdition />
               </div>
         </section>
 
         <section style={Sections}> 
-            <h1 style={SeeMoreTitle}>Men</h1>
+            <h1 style={SeeMoreTitle}>
+                <Link to='/MenWatchTab'>
+                Men
+                </Link>
+            </h1>
               <div style={limited}>
                   <Men />
               </div>
         </section>
 
         <section style={Sections}>  
-            <h1 style={SeeMoreTitle}>Women</h1>
+            <h1 style={SeeMoreTitle}>
+                <Link to='/WomenWatchTab'>
+                Women
+                </Link>
+            </h1>
                <div style={limited}>
                   <Women />
               </div>
         </section>
 
         <section style={Sections}> 
-            <h1 style={SeeMoreTitle}>Kids</h1>
+            <h1 style={SeeMoreTitle}>
+                <Link to='/KidsWatchTab'>
+                Kids
+                </Link>
+            </h1>
               <div style={limited}>
                   <Kids />
               </div>
         </section>
 
         <section>
-            <div className="hero min-h-screen">
-              <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={Add10} />
-                <div>
-                  <h1 className="text-5xl font-bold" id='HeroTitle'>Get 5% Cash Back</h1>
-                  <p className="py-6" id='Fonts'>
-                        Earn 5% cash back on everyday purchases <br /> a smart way to save and enjoy extra money in your pocket!
-                  </p>
-                  <button className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-                    Buy Now
-                  </button>
-                </div>
-              </div>
-            </div>
+           <img src={LastSection} alt="LastSection" style={{width: '100%'}}/>
         </section>
         </section>
     </>
