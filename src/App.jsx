@@ -36,8 +36,8 @@ function App() {
         {/* <Route path ='/admin' name="Admin" render={(props) => <AdminHome {...props} /> }/> */}
         <Route path="/admin/*" element={<AdminHome />} />
     </Routes>
-    {/* <NewsLetter />
-    <Footer /> */}
+    <NewsLetter />
+    <Footer />
     </ContextProvider>
   )
 }
