@@ -22,60 +22,35 @@ function Navbar() {
           <ul className="flex space-x-8">
             <li>
               <Link to='/' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
-              <a
-                href="#"
-                className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
-                id='Fonts'>
                 Home
-              </a>
               </Link>
             </li>
             <li>
             <Link to='/LimitedEdition' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
-              <a
-                href="#"
-                className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
-                id='Fonts'>
                 Limited Edition
-              </a>
               </Link>
             </li>
 
             <Link to='/MenWatchTab' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
-              <a
-                href="#"
-                className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
-                id='Fonts'>
                 Men
-              </a>
               </Link>
 
             <li>
             <Link to='/WomenWatchTab' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
-              <a
-                href="#"
-                className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
-                id='Fonts'>
                 Women
-              </a>
               </Link>
             </li>
             <li>
             <Link to='/KidsWatchTab' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
-              <a
-                href="#"
-                className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
-                id='Fonts'>
                 Kids
-              </a>
               </Link>
             </li>
           </ul>
         </div>
         <div className="flex items-center" style={{ paddingRight: '5rem' }}> 
-          <a className="flex items-center">
+          <Link to="/" className="flex items-center">
           <img src={Horo} className="logo" alt="Flowbite Logo" />
-          </a>
+          </Link>
         </div>
         <button
           data-collapse-toggle="navbar-default"
