@@ -21,10 +21,10 @@ import {
   PowerIcon,
 } from "@heroicons/react/24/solid";
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
-
+import { useStateContext } from "../../context/ContextProvider";
 export function Sidebar() {
   const [open, setOpen] = React.useState(0);
-
+  const {logout} = useStateContext();
   const handleOpen = (value) => {
     setOpen(open === value ? 0 : value);
   };
@@ -163,9 +163,9 @@ export function Sidebar() {
           </ListItemPrefix>
           Settings
         </ListItem>
-        <ListItem>
+        <ListItem onClick={logout}>
           <ListItemPrefix>
-            <PowerIcon className="h-5 w-5" />
+            <PowerIcon className="h-5 w-5"/> 
           </ListItemPrefix>
           Log Out
         </ListItem>

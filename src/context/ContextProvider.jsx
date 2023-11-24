@@ -14,7 +14,7 @@ const StateContext = createContext({
 
 export const ContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  // const [currentUser, setCurrentUser] = useState({});
+  // const [sey, setCurrentUser] = useState({});
   const [userToken, _setUserToken] = useState(
     localStorage.getItem("auth_token") || ""
   );
@@ -44,14 +44,25 @@ export const ContextProvider = ({ children }) => {
       .then(({ data }) => {
         setUser(data.user);
         setUserToken(data.token);
-        new Swal({
-          title: "Success",
-          text: "Log In Successfully",
-          icon: "success",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        navigate("/");
+        if(data.user?.email === "admin@test.com"){ 
+          new Swal({
+            title: "Success",
+            text: "Admin",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          navigate("/admin/dashboard");
+        }else{
+          new Swal({
+            title: "Success",
+            text: "Log In Successfully",
+            icon: "success",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          navigate("/");
+        }   
       })
       .catch((e) => {
         if (e.response && e.response.status === 422) {
@@ -85,17 +96,13 @@ export const ContextProvider = ({ children }) => {
     axios.post("/api/logout").then(() => {
       setUser(null);
       window.location.reload();
+      navigate("/")
     });
   };
 
-  // const forgotPassword = async() => {s
-
-  // }
   return (
     <StateContext.Provider
       value={{
-        // currentUser,
-        // setCurrentUser,
         login,
         register,
         logout,
@@ -107,9 +114,6 @@ export const ContextProvider = ({ children }) => {
         errors,
         setErrors,
         csrf,
-        // forgotPassword,
-        // status,
-        // setStatus,
       }}
     >
       {children}
