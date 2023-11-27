@@ -22,6 +22,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useStateContext } from "../../context/ContextProvider";
+import Category from "./Category";
 export function Sidebar() {
   const [open, setOpen] = React.useState(0);
   const {logout} = useStateContext();
@@ -30,7 +31,7 @@ export function Sidebar() {
   };
 
   return (
-    <Card className="lg:w-[20rem] w-full max-w-full md:max-w-[16rem] p-4 shadow-xl shadow-blue-gray-900/5">
+      <Card className="">
       <div className="mb-2 p-4">
         <Typography variant="h5" color="blue-gray">
           Sidebar
@@ -51,6 +52,14 @@ export function Sidebar() {
               <UserCircleIcon className="h-5 w-5" />
             </ListItemPrefix>
             Profile
+          </ListItem>
+        </Link>
+        <Link to="/admin/category   ">
+          <ListItem>
+            <ListItemPrefix>
+              <UserCircleIcon className="h-5 w-5" />
+            </ListItemPrefix>
+            Category
           </ListItem>
         </Link>
         <Accordion
@@ -164,7 +173,7 @@ export function Sidebar() {
           Settings
         </ListItem>
         <ListItem onClick={logout}>
-          <ListItemPrefix>
+          <ListItemPrefix>  
             <PowerIcon className="h-5 w-5"/> 
           </ListItemPrefix>
           Log Out

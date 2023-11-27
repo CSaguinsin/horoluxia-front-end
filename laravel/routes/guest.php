@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\CategoryController; 
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')
@@ -35,3 +36,6 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+Route::post('/store-category', [CategoryController::class, 'store'])
+                ->middleware('guest')
+                ->name('store-category');

@@ -5,27 +5,24 @@ import Dashboard from "../components/Dashboard";
 import Profile from "../components/Profile";
 import { useStateContext } from "../../context/ContextProvider";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import Category from "../components/Category";
 const AdminHome = () => {
-  const navigate = useNavigate();
-  const {getUser, user} = useStateContext();
-  useEffect(() => {
-    if (!user) {  
-      getUser();
-      navigate("/login")
-    }else{
-      navigate("/admin")
-    }
-  }, []);
+  // const navigate = useNavigate();
+  // const {userToken} = useStateContext();
+  // if (!userToken) {
+  //   navigate("/login"); 
+  // }else{
+  //   navigate("/admin/*")
+  // }
+
   return (
     <div>
-      <Sidebar />
       <div>
         <main>
-          <div>Admin Home</div>
           <Routes>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="profile" element={<Profile />} />
+            <Route path="category" element={<Category />} />
             <Route path="/*" element={<Navigate to="dashboard" />} />
           </Routes> 
         </main>

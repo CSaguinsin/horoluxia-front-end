@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useStateContext } from "../context/ContextProvider";
+import { useStateContext } from "../context/ContextProvider";;
 import Navbar from "./Navbar";
 function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, errors } = useStateContext();
-
+  const { login, errors} = useStateContext();
   const handleSignIn = async (e) => {
     e.preventDefault();
     login({ email, password });
   };
+
+ 
   return (
     <>
       <Navbar/>
