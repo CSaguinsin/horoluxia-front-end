@@ -1,11 +1,25 @@
-import React, { useState } from "react";
-import { Sidebar } from "./Sidebar";
+import React, { useState, useEffect } from "react";
+import Sidebar from '../components/Sidebar'
 import { Input } from "@material-tailwind/react";
 import { Textarea } from "@material-tailwind/react";
 import { Checkbox } from "@material-tailwind/react";
+import { Button } from "@material-tailwind/react";
 import axios from "../../api/axios";
 import Swal from "sweetalert2";
-const Category = () => {
+import { useNavigate } from 'react-router-dom';
+import { useStateContext } from '../../context/ContextProvider';
+const AddCategory = () => {
+  // const navigate = useNavigate();
+  // const { userToken } = useStateContext();
+
+  // useEffect(() => {
+  //   if (!userToken) {
+  //     navigate('/login');
+  //   } else {
+  //     navigate('/admin');
+  //   }
+  // }, [userToken, navigate]);
+  
     const  [categoryInput, setCategory] = useState({
         slug: '',
         name: '',
@@ -23,8 +37,6 @@ const Category = () => {
     }
 
     const handleSubmit = (e) => {
-        console.log("click")
-        console.log(document.getElementById('CATEGORY_FORM'));
         e.preventDefault();
         const data = {
             slug:categoryInput.slug,
@@ -62,23 +74,21 @@ const Category = () => {
         });
     }
   return (
-    <div className="flex ">
+    <div className="flex md:flex-row w-screen">
       <div>
         <Sidebar />
       </div>
-      <div className="w-full m-10 shadow-md ">
+      <div className="m-10 shadow-md">
         <div className="text-center flex justify-center">
-            <h2 className="text-4xl font-semibold font-sans">CATEGORY</h2>
+          <h2 className="text-4xl font-semibold font-sans">CATEGORY</h2>
         </div>
-        {/* {
-            display_errors.map((item) => {
-                return (<p>{item}</p>)
-            })
-        } */}
-        <form className="bg-white rounded px-8 pt-6 pb-8 mb-4 "  onSubmit={handleSubmit}>
-          <div className="flex gap-4 justify-center">
-            <div className="flex flex-col gap-4">
-              <div className="w-96">
+        <form
+          className="bg-white rounded pt-6 pb-8 mb-4 md:flex-row w-full px-24" 
+          onSubmit={handleSubmit}
+        >   
+          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-col gap-4">
+              <div className="w-96 relative">
                 <Input label="Slug" name="slug" onChange={handleInput} value={categoryInput.slug}/>
                 <span>{categoryInput.error_list.slug}</span>
               </div>
@@ -90,7 +100,6 @@ const Category = () => {
                 <Textarea label="Description" name="description" onChange={handleInput} value={categoryInput.description}/>
               </div>
             </div>
-            
             <div className="flex flex-col gap-4">
               <div className="w-96">
                 <Input label="Meta Title" name="meta_title" onChange={handleInput} value={categoryInput.meta_title}/>
@@ -100,23 +109,24 @@ const Category = () => {
                 <Input label="Meta Keywords" name="meta_keywords" onChange={handleInput} value={categoryInput.meta_keywords}/>
               </div>
               <div className="w-96">
-                <Textarea label="Description" name="meta_description"  onChange={handleInput} value={categoryInput.meta_description}/>
+                <Textarea label="Description" name="meta_description"  onChange={handleInput} value={categoryInput.meta_description || ''}/>
               </div>
             </div>
           </div>
-
-          <div className="flex items-center justify-between mx-20">
-            <div className="flex flex-row justify-center text-center ">
-                <label>Status</label>
-                <Checkbox label="Remember Me" name="status" onChange={handleInput} checked={categoryInput.status}/> 
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start  md:flex-row">
+            <div className="w-96">
+              <Checkbox
+                label="Status"
+                name="status"
+                onChange={handleInput}
+                checked={categoryInput.status}
+              />
             </div>
-           
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Submit
-            </button>
+            <div className="w-full">
+              <Button fullWidth type="submit" >
+                Submit
+              </Button>
+            </div>
           </div>
         </form>
       </div>
@@ -124,4 +134,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default AddCategory;

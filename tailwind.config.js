@@ -5,8 +5,12 @@ module.exports = withMT({
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {},
+  theme: {  
+    extend: {
+    },
+    colors: {
+      'matte': '#28282B', // Custom primary background color
+    },
   },
   plugins: [require("daisyui")],
 });

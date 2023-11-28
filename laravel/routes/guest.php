@@ -39,3 +39,16 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 Route::post('/store-category', [CategoryController::class, 'store'])
                 ->middleware('guest')
                 ->name('store-category');
+Route::get('/view-category', [CategoryController::class, 'index'])
+                ->middleware('guest')
+                ->name('view-category');
+Route::get('/edit-category/{id}', [CategoryController::class, 'edit'])
+                ->middleware('guest')
+                ->name('edit-category');
+Route::put('/update-category/{id}', [CategoryController::class, 'update'])
+                ->middleware('guest')
+                ->name('update-category');
+Route::delete('/delete-category/{id}', [CategoryController::class, 'destroy'])
+                ->middleware('guest')
+                ->name('delete-category');
+             
