@@ -70,7 +70,7 @@ const ViewCategory = () => {
     
   };
   return (
-    <div className="flex md:flex-row ">
+    <div className="flex md:flex-row">
       <div>
         <Sidebar />
       </div>

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { AiOutlineDashboard } from "react-icons/ai";
-import { RiSettings4Line } from "react-icons/ri";
-import { TbReportAnalytics } from "react-icons/tb";
+import { FaList } from "react-icons/fa";
 import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
-import { FiMessageSquare, FiFolder, FiShoppingCart } from "react-icons/fi";
 import { TbLogout2 } from "react-icons/tb";
 import { IoMdAdd } from "react-icons/io";
 import { BiCategoryAlt } from "react-icons/bi";
@@ -23,9 +21,12 @@ const Sidebar = () => {
   const menus = [
     { name: "Profile", link: "/admin/profile", icon: AiOutlineUser},
     { name: "Dashboard", link: "/admin/dashboard",  icon: AiOutlineDashboard },
-    { name: "CATEGORY", link: "",  icon: BiCategoryAlt, margin: true },
-    { name: "Add Category", link: "/admin/add-category", icon: IoMdAdd},
-    { name: "View Category", link: "/admin/view-category", icon: MdOutlineViewHeadline },   
+    { name: "CATEGORY", link: "",  icon: BiCategoryAlt, margin: true, hr: true},
+    { name: "Add Category", link: "/admin/add-category", icon: IoMdAdd,},
+    { name: "View Category", link: "/admin/view-category", icon: MdOutlineViewHeadline },  
+    { name: "PRODUCTS", link: "",  icon: FaList, margin: true, hr: true}, 
+    { name: "Add Products", link: "/admin/add-product", icon: IoMdAdd,},
+    { name: "View Products", link: "/admin/view-product", icon: MdOutlineViewHeadline }, 
     { name: "Logout", link: "/admin", icon: TbLogout2, margin: true },
   ];
   const [open, setOpen] = useState(true);
@@ -49,7 +50,8 @@ const Sidebar = () => {
               to={menu?.link}
               key={i}
               className={` ${
-                menu?.margin && "mt-5"
+                menu?.margin && "mt-5",
+                menu?.hr && "pt-8 border-t-2 rounded-none hover:bg-transparent"
               } group flex items-center text-sm  gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md`}
             >
               <div>{React.createElement(menu?.icon, { size: "20" })}</div>

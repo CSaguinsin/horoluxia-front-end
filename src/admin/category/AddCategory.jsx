@@ -116,10 +116,10 @@ const AddCategory = () => {
           <div className="flex flex-wrap gap-4 justify-center md:justify-start  md:flex-row">
             <div className="w-96">
               <Checkbox
-                label="Status"
+                label="Show"
                 name="status"
                 onChange={handleInput}
-                checked={categoryInput.status}
+                value={categoryInput.status}
               />
             </div>
             <div className="w-full">

@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\CategoryController; 
+use App\Http\Controllers\API\ProductController; 
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')
@@ -51,4 +52,10 @@ Route::put('/update-category/{id}', [CategoryController::class, 'update'])
 Route::delete('/delete-category/{id}', [CategoryController::class, 'destroy'])
                 ->middleware('guest')
                 ->name('delete-category');
+Route::get('/all-category', [CategoryController::class, 'allcategories'])
+                ->middleware('guest')
+                ->name('all-category');
+Route::post('/store-product', [ProductController::class, 'store'])
+                ->middleware('guest')
+                ->name('store-product');
              
