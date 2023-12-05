@@ -33,9 +33,11 @@ function App() {
         <Route path="/MenWatchTab" element={<MenWatchTab />} />
         <Route path="/LimitedEdition" element={<LimitedEditionTab />} />
         <Route path="/admin/*" element={<AdminHome />} />
-      </Routes>
-      {/* <NewsLetter />
-    <Footer /> */}
+
+    </Routes>
+    <NewsLetter />
+    <Footer />
+
     </ContextProvider>
   );
 }
