@@ -9,6 +9,7 @@ import { Tabs } from "flowbite-react";
 import { FaHome } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { RiContactsFill } from "react-icons/ri";
+import { GrFormViewHide } from "react-icons/gr";
 import {
   Select,
   Option,
@@ -78,6 +79,7 @@ const AddProduct = () => {
     formData.append("quantity", productInput.quantity);
     formData.append("featured", productInput.featured);
     formData.append("status", productInput.status);
+    formData.append("popular", productInput.popular);
 
     axios.post(`/api/store-product`, formData).then(res => {
       if (res.data.status === 200) {
@@ -125,11 +127,11 @@ const AddProduct = () => {
       </div>
       <div className="flex flex-col w-screen">
         <div className="flex justify-between h-24 justify-center items-center px-4 md:px-12 font-sans">
-          <h1 className="text-2xl font-semibold">Add Products</h1>
+          <h1 className="text-2xl font-semibold">ADD PRODUCTS</h1>
           <div>
             <Link to="/admin/add-category">
               <Button className="flex items-center justify-center bg-matte">
-                <IoMdAdd className="h-6 w-6 mr-2" />
+                <GrFormViewHide className="h-6 w-6 mr-2" />
                 View Products
               </Button>
             </Link>

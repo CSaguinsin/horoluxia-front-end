@@ -76,7 +76,7 @@ const ViewCategory = () => {
       </div>
       <div className="flex flex-col w-screen">
         <div className="flex justify-between h-24 justify-center items-center px-4 md:px-12 font-sans">
-          <h1 className="text-2xl font-semibold">View Categories</h1>
+          <h1 className="text-2xl font-semibold">VIEW CATEGORIES</h1>
           <div>
             <Link to="/admin/add-category">
             <Button className="flex items-center justify-center bg-matte">

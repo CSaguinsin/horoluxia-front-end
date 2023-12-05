@@ -9,6 +9,8 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\CategoryController; 
 use App\Http\Controllers\API\ProductController; 
+use App\Http\Controllers\API\FrontEndController; 
+use App\Http\Controllers\API\CartController; 
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')
@@ -58,4 +60,31 @@ Route::get('/all-category', [CategoryController::class, 'allcategories'])
 Route::post('/store-product', [ProductController::class, 'store'])
                 ->middleware('guest')
                 ->name('store-product');
+Route::get('/view-product', [ProductController::class, 'index'])
+                ->middleware('guest')
+                ->name('view-product');
+Route::get('/edit-product/{id}', [ProductController::class, 'edit'])
+                ->middleware('guest')
+                ->name('edit-product');
+Route::post('/update-product/{id}', [ProductController::class, 'update'])
+                ->middleware('guest')
+                ->name('update-product');
+Route::get('/get-category', [FrontEndController::class, 'category'])
+                ->middleware('guest')
+                ->name('get-category');
+Route::get('/fetch-products/{slug}', [FrontEndController::class, 'product'])
+                ->middleware('guest')
+                ->name('fetch-products');
+Route::get('/product-details/{category_slug}/{product_slug}', [FrontEndController::class, 'productDetails'])
+                ->middleware('guest')
+                ->name('product-details');
+Route::post('/add-to-cart', [CartController::class, 'addtocart'])
+                ->middleware('guest')
+                ->name('add-to-cart');
+Route::get('/cart', [CartController::class, 'viewCart'])
+                ->middleware('guest')
+                ->name('cart');
+Route::put('/cart-update-quantity/{card_id}/{scope}', [CartController::class, 'updateQuantity'])
+                ->middleware('guest')
+                ->name('cart-update-quantity');
              

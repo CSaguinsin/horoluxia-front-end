@@ -47,7 +47,7 @@ const Countdown = () => {
 
   return (
     <div className="Countdown">
-      <div className="max-w-5xl mx-auto flex items-center bg-black">
+      <div className="max-w-5xl mx-auto flex items-center bg-black ">
         <CountdownItem num={remaining.days} text="days" />
         <CountdownItem num={remaining.hours} text="hours" />
         <CountdownItem num={remaining.minutes} text="minutes" />
@@ -65,7 +65,7 @@ const CountdownItem = ({ num, text, fontSize, height }) => {
 
   return (
     <div
-      className={`font-mono w-1/4 flex flex-col gap-1 md:gap-2 items-center justify-center ${itemStyle.height}`}
+      className={`font-mono w-1/4 gap-4 md:gap-2 items-center justify-center ${itemStyle.height}`}
     >
       <div className="w-full text-center relative overflow-hidden">
         <AnimatePresence mode="popLayout">
@@ -81,7 +81,7 @@ const CountdownItem = ({ num, text, fontSize, height }) => {
           </motion.span>
         </AnimatePresence>
       </div>
-      <p id="Fonts">Free shipping until 2025</p>
+      <p id="Fonts" className="">Free shipping until 2025</p>
     </div>
   );
 };

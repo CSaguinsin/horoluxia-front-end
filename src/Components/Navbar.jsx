@@ -1,55 +1,211 @@
-import React from 'react';
-import Account from '../assets/Logo/account.png'
-import AddtoCart from '../assets/Logo/AddToCart.png' 
-import CompanyLogo from '../assets/Logo/horoluxiaLogo.png'
-import Horo from '../assets/Logo/horoluxia.png'
-import { Link } from 'react-router-dom';
-import '../Css/Style.css';
+import Account from "../assets/Logo/account.png";
+import { FaUser } from "react-icons/fa6";
+import { BsCart2 } from "react-icons/bs";
+import CompanyLogo from "../assets/Logo/horoluxiaLogo.png";
+import Horo from "../assets/Logo/horoluxia.png";
+import { Link } from "react-router-dom";
+import "../Css/Style.css";
 import { useStateContext } from "../context/ContextProvider";
 import { useEffect } from "react";
+import React from "react";
 
-function Navbar() {
-  const { user, logout, getUser} = useStateContext();
+import { FaArrowRight } from "react-icons/fa";
+import {
+  Navbar,
+  MobileNav,
+  Typography,
+  Button,
+  IconButton,
+  Card,
+} from "@material-tailwind/react";
+function StickyNavbar() {
+  const { user, logout, getUser } = useStateContext();
   useEffect(() => {
     if (!user) {
       getUser();
     }
   }, []);
+  const [openNav, setOpenNav] = React.useState(false);
+
+  useEffect(() => {
+    window.addEventListener(
+      "resize",
+      () => window.innerWidth >= 960 && setOpenNav(false)
+    );
+  }, []);
+
+  const navList = (
+    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Pages
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Account
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Blocks
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center">
+          Docs
+        </a>
+      </Typography>
+    </ul>
+  );
   return (
-    <nav  className="border-gray-200 dark:bg-gray-900">
+    // <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
+    //   <div className="flex items-center justify-between text-blue-gray-900">
+    //     <Typography
+    //       as="a"
+    //       href="#"
+    //       className="mr-4 cursor-pointer py-1.5 font-medium"
+    //     >
+    //       Material Tailwind
+    //     </Typography>
+    //     <div className="flex items-center gap-4">
+    //       <div className="mr-4 hidden lg:block">{navList}</div>
+    //       <div className="flex items-center gap-x-1">
+    //         <Button
+    //           variant="text"
+    //           size="sm"
+    //           className="hidden lg:inline-block"
+    //         >
+    //           <span>Log In</span>
+    //         </Button>
+    //         <Button
+    //           variant="gradient"
+    //           size="sm"
+    //           className="hidden lg:inline-block"
+    //         >
+    //           <span>Sign in</span>
+    //         </Button>
+    //       </div>
+    //       <IconButton
+    //         variant="text"
+    //         className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+    //         ripple={false}
+    //         onClick={() => setOpenNav(!openNav)}
+    //       >
+    //         {openNav ? (
+    //           <svg
+    //             xmlns="http://www.w3.org/2000/svg"
+    //             fill="none"
+    //             className="h-6 w-6"
+    //             viewBox="0 0 24 24"
+    //             stroke="currentColor"
+    //             strokeWidth={2}
+    //           >
+    //             <path
+    //               strokeLinecap="round"
+    //               strokeLinejoin="round"
+    //               d="M6 18L18 6M6 6l12 12"
+    //             />
+    //           </svg>
+    //         ) : (
+    //           <svg
+    //             xmlns="http://www.w3.org/2000/svg"
+    //             className="h-6 w-6"
+    //             fill="none"
+    //             stroke="currentColor"
+    //             strokeWidth={2}
+    //           >
+    //             <path
+    //               strokeLinecap="round"
+    //               strokeLinejoin="round"
+    //               d="M4 6h16M4 12h16M4 18h16"
+    //             />
+    //           </svg>
+    //         )}
+    //       </IconButton>
+    //     </div>
+    //   </div>
+    //   <MobileNav open={openNav}>
+    //     {navList}
+    //     <div className="flex items-center gap-x-1">
+    //       <Button fullWidth variant="text" size="sm" className="">
+    //         <span>Log In</span>
+    //       </Button>
+    //       <Button fullWidth variant="gradient" size="sm" className="">
+    //         <span>Sign in</span>
+    //       </Button>
+    //     </div>
+    //   </MobileNav>
+    // </Navbar>
+    <nav className="border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto">
         <div className="flex items-center">
           <ul className="flex space-x-8">
             <li>
-              <Link to='/' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
+              <Link
+                to="/"
+                className="font-cinzel text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
+              >
                 Home
               </Link>
             </li>
             <li>
-            <Link to='/LimitedEdition' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
+              <Link
+                to="/LimitedEdition"
+                className="font-cinzel  text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
+              >
                 Limited Edition
               </Link>
             </li>
 
-            <Link to='/MenWatchTab' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
-                Men
-              </Link>
+            <Link
+              to="/MenWatchTab"
+              className="font-cinzel  text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
+            >
+              Men
+            </Link>
 
             <li>
-            <Link to='/WomenWatchTab' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
+              <Link
+                to="/WomenWatchTab"
+                className="font-cinzel text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
+              >
                 Women
               </Link>
             </li>
             <li>
-            <Link to='/KidsWatchTab' className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white" id='Fonts'>
+              <Link
+                to="/KidsWatchTab"
+                className="font-cinzel  text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
+              >
                 Kids
               </Link>
             </li>
           </ul>
         </div>
-        <div className="flex items-center" style={{ paddingRight: '5rem' }}> 
+        <div className="flex items-center" style={{ paddingRight: "5rem" }}>
           <Link to="/" className="flex items-center">
-          <img src={Horo} className="logo" alt="Flowbite Logo" />
+            <img src={Horo} className="logo" alt="Flowbite Logo" />
           </Link>
         </div>
         <button
@@ -78,30 +234,38 @@ function Navbar() {
         </button>
         {user ? (
           <>
-            <Link>
-              <span style={{ display: "flex", alignItems: "center" }}>
-                <img src={AddtoCart} className="h-7 mr-3" alt="Flowbite Logo" />
-                Cart
-              </span>
+            <Link to="/cart">
+            <Button     
+              type="submit"
+              className="flex items-center justify-center gap-4 text-sm  border-none font-poppins" 
+              variant="outlined" 
+            >
+              <BsCart2 className="w-6 h-6"/>
+              Cart
+            </Button>
             </Link>
-            <button
+            <Button
               onClick={logout}
-              className="rounded py-2 pr-4 pl-3 text-black"
+              type="submit"
+              className="rounded flex items-center justify-center gap-4 text-sm text-left bg-none border-none font-poppins"
+              variant="outlined" 
             >
               Logout
-            </button>
+            </Button>
           </>
         ) : (
           <>
             <Link
-              to="/LogIn"
+              to="/SignUp"
               className="text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
               id="Fonts"
             >
-              <span style={{ display: "flex", alignItems: "center" }}>
-                <img src={Account} className="h-7 mr-3" alt="Flowbite Logo" />
+              <Button
+                type="submit"
+              className="rounded flex items-center justify-center gap-4 text-sm text-left bg-none border-none font-poppins"
+              >
                 Sign Up
-              </span>
+              </Button>
             </Link>
           </>
         )}
@@ -110,4 +274,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default StickyNavbar;

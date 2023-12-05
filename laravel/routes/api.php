@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\CategoryController; 
 use App\Http\Controllers\API\ProductController; 
+use App\Http\Controllers\API\FrontEndController; 
+use App\Http\Controllers\API\CartController; 
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,11 +21,16 @@ use App\Http\Controllers\API\ProductController;
 Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
+Route::get('/get-category', [FrontEndController::class, 'category']);
+Route::get('/fetch-products/{slug}', [FrontEndController::class, 'product']);
+Route::get('/product-details/{category_slug}/{product_slug}', [FrontEndController::class, 'productDetails']);
+Route::post('/add-to-cart', [CartController::class, 'addtocart']);
+Route::get('/cart', [CartController::class, 'viewCart']);
+Route::put('/cart-update-quantity/{card_id}/{scope}', [CartController::class, 'updateQuantity']);
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
     Route::post('/logout', [AuthController::class, 'destroy']);
-
     //category
     Route::get('/view-category', [CategoryController::class, 'index']);
     Route::post('/store-category', [CategoryController::class, 'store']);
@@ -33,4 +41,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
     //product
     Route::post('/store-product', [ProductController::class, 'store']);
+    Route::get('/view-product', [ProductController::class, 'index']);
+    Route::get('/edit-product/{id}', [ProductController::class, 'edit']);
+    Route::post('/update-product/{id}', [ProductController::class, 'update']);
 });

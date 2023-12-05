@@ -11,7 +11,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from '../../api/axios';
 const EditCategory = () => {
     const navigate =  useNavigate();
-    
+    const [allcheckbox, setCheckbox] = useState([]);
     const [categoryInput, setCategory] = useState({
         slug: '',
         name: '',
@@ -82,6 +82,10 @@ const EditCategory = () => {
             }
         })
     }
+    const handleCheckbox = (e) =>{
+      e.persist();
+      setCheckbox({ ...allcheckbox, [e.target.name]: e.target.checked });
+    }
     return (
         <div className="flex md:flex-row w-screen">
           <div>
@@ -135,8 +139,8 @@ const EditCategory = () => {
                   <Checkbox
                     label="Status"
                     name="status"
-                    onChange={handleInput}
-                    value={categoryInput.status}
+                    onChange={handleCheckbox}
+                    defaultChecked={allcheckbox.status === 1 ? true : false}
                   />
                 </div>
                 <div className="w-full">

@@ -7,7 +7,14 @@ module.exports = withMT({
     "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        horoluxia: ['Libre Baskerville', 'Cinzel Decorative', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        cinzel: ['Cinzel', 'sans-serif'],
+        cinzelDeco: ['Cinzel Decorative', 'sans-serif'],
+      },
+    },
     colors: {
       matte: "#28282B", // Custom primary background color
     },
