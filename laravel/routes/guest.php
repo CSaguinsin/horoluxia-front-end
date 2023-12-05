@@ -7,6 +7,8 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\CategoryController; 
+use App\Http\Controllers\API\ProductController; 
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')
@@ -35,3 +37,25 @@ Route::post('/email/verification-notification', [EmailVerificationNotificationCo
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+Route::post('/store-category', [CategoryController::class, 'store'])
+                ->middleware('guest')
+                ->name('store-category');
+Route::get('/view-category', [CategoryController::class, 'index'])
+                ->middleware('guest')
+                ->name('view-category');
+Route::get('/edit-category/{id}', [CategoryController::class, 'edit'])
+                ->middleware('guest')
+                ->name('edit-category');
+Route::put('/update-category/{id}', [CategoryController::class, 'update'])
+                ->middleware('guest')
+                ->name('update-category');
+Route::delete('/delete-category/{id}', [CategoryController::class, 'destroy'])
+                ->middleware('guest')
+                ->name('delete-category');
+Route::get('/all-category', [CategoryController::class, 'allcategories'])
+                ->middleware('guest')
+                ->name('all-category');
+Route::post('/store-product', [ProductController::class, 'store'])
+                ->middleware('guest')
+                ->name('store-product');
+             

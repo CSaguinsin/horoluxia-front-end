@@ -4,16 +4,16 @@ import { useState } from "react";
 import { useStateContext } from "../context/ContextProvider";
 import Navbar from './Navbar';
 import Countdown from './Countdown';
-
 function LogIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, errors } = useStateContext();
-
+  const { login, errors} = useStateContext();
   const handleSignIn = async (e) => {
     e.preventDefault();
     login({ email, password });
   };
+
+ 
   return (
     <>
       <header className="header">
