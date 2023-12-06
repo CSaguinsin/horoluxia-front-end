@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import "../Css/Style.css";
-import { useStateContext } from "../context/ContextProvider";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
 import Add1 from "../assets/Pictures/Add1.jpg";
 import Add2 from "../assets/Pictures/Add2.jpg";
@@ -22,16 +21,6 @@ import Add15 from "../assets/Pictures/Add15.jpg";
 import Add16 from "../assets/Pictures/Add16.jpg";
 
 const HeroSection = () => {
-  const { userToken, user } = useStateContext();
-  const navigate = useNavigate();
-  const handleBuyNow = () => {
-    if (!userToken) {
-      navigate("/login");
-    } else {
-      navigate("/LimitedEdition");
-    }
-  };
-
   return (
     <section className="w-full grid p-8 grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto mb-12 bg-[#FBF0E4]">
       <div>
@@ -44,16 +33,14 @@ const HeroSection = () => {
         >
           Here at Horoluxia we have a wide range of watches for you to choose
           from.
-          <br />
-          {user?.firstname}
         </p>
+        <Link path="/limited-edition">
         <Button
-          type="submit"
-          onClick={handleBuyNow}
           className="rounded-full px-10  font-poppins"
         >
           Buy Now
         </Button>
+        </Link>
       </div>
       <ShuffleGrid />
     </section>

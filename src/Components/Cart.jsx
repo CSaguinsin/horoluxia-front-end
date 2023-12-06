@@ -103,14 +103,6 @@ const Cart = () => {
   function updateQuantity(cart_id, scope) {
     axios.put(`api/cart-update-quantity/${cart_id}/${scope}`).then((res) => {
       if (res.data.status === 200) {
-        // new Swal({
-        //   title: "Success",
-        //   text: res.data.message,
-        //   icon: "success",
-        //   showConfirmButton: false,
-        //   timer: 1300,
-        // });
-        // console.log(cart);
       } else if (res.data.status === 401) {
         navigate("/login");
       }
@@ -131,7 +123,7 @@ const Cart = () => {
         });
         setTimeout(() => {
           window.location.reload();
-        }, 4000);
+        }, 3000);
       } else if (res.data.status === 404) {
         new Swal({
           title: "Error",

@@ -140,12 +140,12 @@ const AddProduct = () => {
         <div className="m-10 shadow-md">
           <div className="flex flex-wrap">
             <div className="w-full">
-            {message && (
-        <div className="flex justify-center bg-red-500 p-2 text-white font-semibold text-center text-lg font-sans mb-2">
-          <MdError size={25} className="mr-2" />
-          {message}
-        </div>
-      )}
+              {message && (
+                 <div className="flex justify-center bg-red-500 p-2 text-white font-semibold text-center text-lg font-sans mb-2">
+                    <MdError size={25} className="mr-2" />
+                      {message}
+                  </div>
+              )}
               <form action="" onSubmit={handleSubmitProduct}>
                 <Tabs
                   aria-label="Full width tabs"

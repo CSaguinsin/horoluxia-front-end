@@ -11,6 +11,8 @@ import Countdown from "./Countdown";
 import SearchItem from "./SearchItem";
 import axios from "../api/axios";
 import { Link } from "react-router-dom";
+import Add10 from "../assets/MensWatch/MensWatches1.jpg";
+import { FaArrowRight } from "react-icons/fa";
 import {
   Card,
   CardHeader,
@@ -47,35 +49,44 @@ function Home() {
         <SearchItem />
       </section>
       <div>
-  {
-    category.map((item , idx) => {
-      return (
-        <div className="bg-[#FBF0E4] w-full max-w-6xl mx-auto m-12 ">
-        <div class="flex gap-4 bg-[#FBF0E4] p-6">
-          <div class="flex-1 text-gray-700 text-center bg-gray-400">
-            <Card className="rounded-none p-2 bg-[#FBF0E4]">
-            <CardHeader
-                shadow={false}
-                floated={false}
-                className="rounded-none m-0"
-              >
-                <img />
-              </CardHeader>
-              <CardBody className="p-2">
-                <div className="flex flex-col items-start">
-                  <Link to= {`/${item.slug}`}>
-                  <Typography color="blue-gray">{item.name}</Typography>
-                  </Link>
-                </div>
-              </CardBody>
-            </Card>
-          </div>
-          </div>
-        </div>
-      );
-    })
-  }
-</div>
+        {category.map((item, idx) => {
+          return (
+            <div className="w-full max-w-6xl mx-auto mb-12" key={idx}>
+              <div className="flex justify-between items-center">
+                <h1 className="text-4xl my-12 mb-8 font-extrabold font-horoluxia">
+                  {item.name}
+                </h1>
+                <Link to={`/${item.slug}`}>
+                  <Button
+                    variant="outlined"
+                    type="submit"
+                    className="rounded flex items-center justify-center gap-4 text-sm text-left bg-none border-none"
+                  >
+                    View More
+                    <FaArrowRight className="h-4 w-4 text-center" />
+                  </Button>
+                </Link>
+              </div>
+              <div className="bg-[#FBF0E4]">
+                <Card className="rounded-none p-2">
+                  <CardHeader
+                    shadow={false}
+                    floated={false}
+                    className="rounded-none m-0"
+                  >
+                    <img
+                      src={`http://localhost:8000/${item.banner}`}
+                      alt="card-image"
+                      className="rounded-none"
+                    />
+                  </CardHeader>
+                </Card>
+              </div>
+              <div class="flex-1 text-gray-700 text-center bg-gray-400"></div>
+            </div>
+          );
+        })}
+      </div>
 
       <section>
         <LimitedEdition />
@@ -93,22 +104,25 @@ function Home() {
         <Kids />
       </section>
 
-      {/* <section>
-            <div className="hero min-h-screen">
-              <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={Add10} />
-                <div>
-                  <h1 className="text-5xl font-bold" id='HeroTitle'>Get 5% Cash Back</h1>
-                  <p className="py-6" id='Fonts'>
-                        Earn 5% cash back on everyday purchases <br /> a smart way to save and enjoy extra money in your pocket!
-                  </p>
-                  <button className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-                    Buy Now
-                  </button>
-                </div>
-              </div>
+      <section>
+        <div className="hero min-h-screen">
+          <div className="hero-content flex-col lg:flex-row-reverse">
+            <img src={Add10} />
+            <div>
+              <h1 className="text-5xl font-bold" id="HeroTitle">
+                Get 5% Cash Back
+              </h1>
+              <p className="py-6" id="Fonts">
+                Earn 5% cash back on everyday purchases <br /> a smart way to
+                save and enjoy extra money in your pocket!
+              </p>
+              <button className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+                Buy Now
+              </button>
             </div>
-        </section> */}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

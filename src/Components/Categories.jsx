@@ -22,22 +22,6 @@ const Categories = () => {
     });
   }, []);
   return (
-    // <select
-    //   label="Select Category"
-    //   name="category_id"
-    //   placeholder="Select Category"
-    //   onChange={handleInput}
-    //   value={productInput.category_id}
-    //   className="h-14 border-0 focus:outline-none rounded-full text-black rounded px-2 md:px-3 py-0 md:py-1 tracking-wider"
-    // >
-    //   {categoryList.map((item) => {
-    //     return (
-    //       <option value={item.id} key={item.id}>
-    //         {item.name}
-    //       </option>
-    //     );
-    //   })}
-    // </select>
     <select className="h-14 border-0 focus:outline-none rounded-full text-black rounded px-2 md:px-3 py-0 md:py-1 tracking-wider">
       <option value="all">All Categories</option>
       <option value="KidsWatch">Kids Watch</option>

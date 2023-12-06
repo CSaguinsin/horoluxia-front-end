@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import axios from "../api/axios";
-import { IoIosCart } from "react-icons/io";
+import { CiHeart } from "react-icons/ci";
+import { CiShoppingCart } from "react-icons/ci";
 import StickyNavbar from "./Navbar";
 import { useNavigate, useParams } from "react-router-dom";
 import {
@@ -12,6 +13,7 @@ import {
   CardFooter,
   Typography,
   Button,
+  IconButton,
 } from "@material-tailwind/react";
 const ViewProduct = () => {
   const [product, setProduct] = useState([]);
@@ -37,15 +39,6 @@ const ViewProduct = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-        } else if (res.data.status === 404) {
-          new Swal({
-            title: "Warning",
-            text: res.data.message,
-            icon: "Error",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          navigate("/");
         }
       } catch (error) {
         if (
@@ -70,7 +63,9 @@ const ViewProduct = () => {
   return (
     <div>
       <StickyNavbar />
-      <div className="w-full bg-red-300">{category.name}</div>
+      <div className="w-full text-center text-bold text-4xl font-cinzelDeco mt-12">
+        {category.name}
+      </div>
       <div>
         {product.length === 0 ? (
           <div className="mx-auto flex justify-center text-2xl font-poppins mt-12">
@@ -82,7 +77,7 @@ const ViewProduct = () => {
               {product.map((item, idx) => (
                 <Card
                   key={idx}
-                  className="rounded-none p-2 bg-[#FBF0E4] border-2"
+                  className="rounded-none p-2 bg-[#FBF0E4] shadow-xl"
                 >
                   <CardHeader
                     shadow={false}
@@ -111,15 +106,16 @@ const ViewProduct = () => {
                       </Typography>
                     </div>
                   </CardBody>
-                  <CardFooter className="w-full  p-0">
+                  <CardFooter className="w-full  p-0 flex justify-between">
                     <Link to={`/${item.category.slug}/${item.slug}`}>
-                      <Button
-                        type="submit"
-                        className="py-4 rounded-full flex items-center justify-center gap-4 text-sm text-left p-2 w-full"
-                      >
-                        <IoIosCart className="h-6 w-6 rounded-full text-center" />
-                        Add to Cart
-                      </Button>
+                      <IconButton variant="outlined" className="border-none">
+                        <CiHeart className="h-8 w-8" />
+                      </IconButton>
+                    </Link>
+                    <Link to={`/${item.category.slug}/${item.slug}`}>
+                      <IconButton variant="outlined" className="border-none">
+                        <CiShoppingCart className="h-8 w-8" />
+                      </IconButton>
                     </Link>
                   </CardFooter>
                 </Card>

@@ -11,6 +11,8 @@ use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\ProductController; 
 use App\Http\Controllers\API\FrontEndController; 
 use App\Http\Controllers\API\CartController; 
+use App\Http\Controllers\API\CheckoutController; 
+use App\Http\Controllers\API\OrderController; 
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')
@@ -45,10 +47,10 @@ Route::post('/store-category', [CategoryController::class, 'store'])
 Route::get('/view-category', [CategoryController::class, 'index'])
                 ->middleware('guest')
                 ->name('view-category');
-Route::get('/edit-category/{id}', [CategoryController::class, 'edit'])
+Route::get('/view-category/edit-category/{id}', [CategoryController::class, 'edit'])
                 ->middleware('guest')
                 ->name('edit-category');
-Route::put('/update-category/{id}', [CategoryController::class, 'update'])
+Route::post('/view-category/update-category/{id}', [CategoryController::class, 'update'])
                 ->middleware('guest')
                 ->name('update-category');
 Route::delete('/delete-category/{id}', [CategoryController::class, 'destroy'])
@@ -90,3 +92,9 @@ Route::put('/cart-update-quantity/{card_id}/{scope}', [CartController::class, 'u
 Route::delete('/delete-cartitem/{card_id}', [CartController::class, 'removeCartItem'])
                 ->middleware('guest')
                 ->name('delete-cartitem');
+Route::post('/place-order', [CheckoutController::class, 'placeOrder'])
+                ->middleware('guest')
+                ->name('place-order');
+Route::get('/view-order', [OrderController::class, 'index'])
+                ->middleware('guest')
+                ->name('view-order');

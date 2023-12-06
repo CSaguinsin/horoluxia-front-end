@@ -108,21 +108,21 @@ const ViewCategory = () => {
                 </tr>
               </thead>
               <tbody>
-                {categoryList.map(({ id, name, slug, status }, index) => {
+                {categoryList.map(( item , index) => {
                   const isLast = index === categoryList.length - 1;
                   const classes = isLast
                     ? "p-4"
                     : "p-4 border-b border-blue-gray-50";
 
                   return (
-                    <tr key={id}>
+                    <tr key={index}>
                       <td className={classes}>
                         <Typography
                           variant="small"
                           color="blue-gray"
                           className="font-normal"
                         >
-                          {id}
+                          {item.id}
                         </Typography>
                       </td>
                       <td className={classes}>
@@ -131,7 +131,7 @@ const ViewCategory = () => {
                           color="blue-gray"
                           className="font-normal text-left"
                         >
-                          {name}
+                          {item.name}
                         </Typography>
                       </td>
                       <td className={classes}>
@@ -140,7 +140,7 @@ const ViewCategory = () => {
                           color="blue-gray"
                           className="font-normal text-left"
                         >
-                          {slug}
+                          {item.slug}
                         </Typography>
                       </td>
                       <td className={classes}>
@@ -149,17 +149,17 @@ const ViewCategory = () => {
                           color="blue-gray"
                           className="font-normal"
                         >
-                          {status}
+                          {item.status}
                         </Typography>
                       </td>
                       <td className={classes}>
-                        <button type="button" onClick={(e) => handleEditClick(e, id)}>
+                        <button type="button" onClick={(e) => handleEditClick(e, item.id)}>
                         <MdEdit className="text-black w-6 h-6"/>
                         </button>       
                       </td>
                       <td className={classes}>
                       <IconButton className="bg-red-600">
-                        <MdDelete className="w-4 h-4" onClick={(e) => handleDelete(e, id)}/>
+                        <MdDelete className="w-4 h-4" onClick={(e) => handleDelete(e, item.id)}/>
                       </IconButton>
                       
                       </td>

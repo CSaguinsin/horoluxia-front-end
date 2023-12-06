@@ -5,12 +5,13 @@ import { Link } from "react-router-dom";
 import { useStateContext } from "../context/ContextProvider";
 import axios from "../api/axios";
 import { CiHeart } from "react-icons/ci";
-import { BsCart2 } from "react-icons/bs";
+import { CiShoppingCart } from "react-icons/ci";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+
 const ProductDetail = () => {
   const [product, setProduct] = useState([]);
   const navigate = useNavigate();
@@ -32,6 +33,11 @@ const ProductDetail = () => {
       useEffect(() => {
         if (!user) {
           getUser();
+        }
+        if (!userToken) {
+          navigate("/login");
+        } else {
+          // navigate("/:slug");
         }
         
       }, []);
@@ -66,15 +72,6 @@ const ProductDetail = () => {
                       showConfirmButton: false,
                       timer: 1500,
                     });
-                  } else if (res.data.status === 404) {
-                    new Swal({
-                      title: "Warning",
-                      text: res.data.message,
-                      icon: "Error",
-                      showConfirmButton: false,
-                      timer: 1500,
-                    });
-                    navigate("/");
                   }
             })
 
@@ -168,7 +165,7 @@ const ProductDetail = () => {
                 </Typography>
               </div>
               <div className="flex justify-between">
-                {product.quantity === 0 ? (
+                {product.quantity < 0 ? (
                   <Typography color="black" className="font-poppins text-md">
                     Out of Stock
                   </Typography>
@@ -178,7 +175,7 @@ const ProductDetail = () => {
                   </Typography>
                 )}
               </div>
-              {product.quantity === 0 ? (
+              {product.quantity < 0 ? (
                 <div></div>
               ) : (
                 <div className="flex justify-between">
@@ -199,9 +196,15 @@ const ProductDetail = () => {
                 </div>
               )}
               <div className="flex justify-between">
-                {product.quantity === 0 ? (
+                {product.quantity < 0 ? (
                   <div color="black" className="font-cinzelDeco text-md">
-                    <Button>Wish List</Button>
+                                        <Button
+                        type="submit"
+                        className="py-4 flex items-center justify-center gap-4 text-sm text-left"
+                      >
+                        <CiHeart className="h-6 w-6 rounded-full text-center" />
+                        Wishlist
+                      </Button>
                   </div>
                 ) : (
                   <div className="flex justify-between w-full">
@@ -220,7 +223,7 @@ const ProductDetail = () => {
                         className="py-4 flex items-center justify-center gap-4 text-sm text-left"
                         onClick={handleAddtoCart}
                       >
-                        <BsCart2 className="h-6 w-6 text-center" />
+                        <CiShoppingCart className="h-6 w-6 text-center" />
                         Add to Cart
                       </Button>
                     </div>

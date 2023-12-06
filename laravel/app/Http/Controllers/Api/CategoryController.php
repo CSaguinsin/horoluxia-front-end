@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\File;
 
 class CategoryController extends Controller
 {
@@ -30,7 +30,21 @@ class CategoryController extends Controller
                 $category->slug = $request->input('slug');
                 $category->name = $request->input('name');
                 $category->description = $request->input('description');
-                $category->status = $request->input('status') == true ? 1 : 0;
+                
+               
+
+                if ($request->hasFile('banner')){
+                    $path = $product->banner;
+                    if(File::exists($path)){
+                        File::delete($path);
+                    }
+                    $file = $request->file('banner');
+                    $extension = $file->getClientOriginalExtension();
+                    $filename = time() .'.'.$extension;
+                    $file->move('uploads/banner/', $filename);
+                    $product->banner = 'uploads/banner/'.$filename;
+                };
+                $category->status = $request->input('status');
                 $category->save();
         
                 return response()->json([
@@ -86,6 +100,7 @@ class CategoryController extends Controller
             'meta_title' => ['required', 'string', 'max:255'],
             'slug' => ['required', 'string', 'max:255'],
             'name' => ['required'],
+            'banner' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:10120'],
         ]);
         if($validator->fails()){
             return response()->json([
@@ -100,6 +115,20 @@ class CategoryController extends Controller
             $category->slug = $request->input('slug');
             $category->name = $request->input('name');
             $category->description = $request->input('description');
+            
+
+            if ($request->hasFile('banner')){
+                $file = $request->file('banner');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() .'.'.$extension;
+                if ($file->move('uploads/banner/', $filename)) {
+                    // File moved successfully
+                    $category->banner = 'uploads/banner/' . $filename;
+                } else {
+                    // Log the error
+                    \Log::error('File move failed for product ID ' . $category->id);
+                }
+            };
             $category->status = $request->input('status') == true ? '1' : '0';
             $category->save();
     

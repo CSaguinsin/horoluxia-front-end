@@ -6,6 +6,7 @@ use App\Http\Controllers\API\CategoryController;
 use App\Http\Controllers\API\ProductController; 
 use App\Http\Controllers\API\FrontEndController; 
 use App\Http\Controllers\API\CartController; 
+use App\Http\Controllers\API\CheckoutController; 
 
 
 /*
@@ -28,7 +29,7 @@ Route::post('/add-to-cart', [CartController::class, 'addtocart']);
 Route::get('/cart', [CartController::class, 'viewCart']);
 Route::put('/cart-update-quantity/{card_id}/{scope}', [CartController::class, 'updateQuantity']);
 Route::delete('/delete-cartitem/{cart_id}', [CartController::class, 'removeCartItem']);
-
+Route::post('/place-order', [CheckoutController::class, 'placeOrder']);
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
@@ -36,8 +37,8 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     //category
     Route::get('/view-category', [CategoryController::class, 'index']);
     Route::post('/store-category', [CategoryController::class, 'store']);
-    Route::get('/edit-category/{id}', [CategoryController::class, 'edit']);
-    Route::put('/update-category/{id}', [CategoryController::class, 'update']);
+    Route::get('/view-category/edit-category/{id}', [CategoryController::class, 'edit']);
+    Route::post('/view-category/update-category/{id}', [CategoryController::class, 'update']);
     Route::delete('/delete-category/{id}', [CategoryController::class, 'destroy']);
     Route::get('/all-category', [CategoryController::class, 'allcategories']);
 
@@ -46,4 +47,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     Route::get('/view-product', [ProductController::class, 'index']);
     Route::get('/edit-product/{id}', [ProductController::class, 'edit']);
     Route::post('/update-product/{id}', [ProductController::class, 'update']);
+
+    //order
+    Route::get('/view-order', [OrderController::class, 'index']);
 });

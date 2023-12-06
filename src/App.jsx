@@ -20,6 +20,7 @@ import ViewProduct from "./Components/ViewProduct";
 import ProductDetail from "./Components/ProductDetail";
 import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
+import Thankyou from "./Components/Thankyou";
 function App() {
   return (
     <ContextProvider>
@@ -32,6 +33,7 @@ function App() {
         <Route path="/password-reset/:token" element={<ResetPassword />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/thankyou" element={<Thankyou />} />
         <Route path="/:slug" element={<ViewProduct />} />
         <Route path="/:category_slug/:product_slug" element={<ProductDetail />} />
         <Route path="/admin/*" element={<AdminHome />} />

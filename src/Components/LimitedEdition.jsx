@@ -53,15 +53,6 @@ function LimitedEdition() {
                   </Typography>
                 </div>
               </CardBody>
-              <CardFooter className="w-full  p-0">
-                <Button
-                  type="submit"
-                  className="py-4 rounded-full flex items-center justify-center gap-4 text-sm text-left p-2 w-full"
-                >
-                  <IoIosCart className="h-6 w-6 rounded-full text-center" />
-                  Add to Cart
-                </Button>
-              </CardFooter>
             </Card>
           </div>
           <div class="flex-1 text-gray-700 text-center bg-gray-400">
@@ -81,15 +72,6 @@ function LimitedEdition() {
                   </Typography>
                 </div>
               </CardBody>
-              <CardFooter className="w-full  p-0">
-                <Button
-                  type="submit"
-                  className="py-4 rounded-full flex items-center justify-center gap-4 text-sm text-left p-2 w-full"
-                >
-                  <IoIosCart className="h-6 w-6 rounded-full text-center" />
-                  Add to Cart
-                </Button>
-              </CardFooter>
             </Card>
           </div>
           <div class="flex-1 text-gray-700 text-center bg-gray-400">
@@ -109,15 +91,6 @@ function LimitedEdition() {
                   </Typography>
                 </div>
               </CardBody>
-              <CardFooter className="w-full  p-0">
-                <Button
-                  type="submit"
-                  className="py-4 rounded-full flex items-center justify-center gap-4 text-sm text-left p-2 w-full"
-                >
-                  <IoIosCart className="h-6 w-6 rounded-full text-center" />
-                  Add to Cart
-                </Button>
-              </CardFooter>
             </Card>
           </div>
           <div class="flex-1 text-gray-700 text-center bg-gray-400">
@@ -137,15 +110,6 @@ function LimitedEdition() {
                   </Typography>
                 </div>
               </CardBody>
-              <CardFooter className="w-full  p-0">
-                <Button
-                  type="submit"
-                  className="py-4 rounded-full flex items-center justify-center gap-4 text-sm text-left p-2 w-full"
-                >
-                  <IoIosCart className="h-6 w-6 rounded-full text-center" />
-                  Add to Cart
-                </Button>
-              </CardFooter>
             </Card>
           </div>
         </div>

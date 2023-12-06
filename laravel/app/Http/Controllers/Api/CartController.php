@@ -87,7 +87,7 @@ class CartController extends Controller
                 $cartitem = new Cart;
                 $cartitem->user_id = $user_id;
                 $cartitem->product_id = $product_id;
-                $cartitem->product_qty = $product_qty; // Assuming your Cart model has a 'quantity' column
+                $cartitem->product_qty = $product_qty; 
                 $cartitem->save();
 
                 return response()->json([
