@@ -1,22 +1,13 @@
-import Account from "../assets/Logo/account.png";
-import { FaUser } from "react-icons/fa6";
 import { BsCart2 } from "react-icons/bs";
-import CompanyLogo from "../assets/Logo/horoluxiaLogo.png";
 import Horo from "../assets/Logo/horoluxia.png";
 import { Link } from "react-router-dom";
 import "../Css/Style.css";
 import { useStateContext } from "../context/ContextProvider";
 import { useEffect } from "react";
 import React from "react";
-
-import { FaArrowRight } from "react-icons/fa";
 import {
-  Navbar,
-  MobileNav,
   Typography,
   Button,
-  IconButton,
-  Card,
 } from "@material-tailwind/react";
 function StickyNavbar() {
   const { user, logout, getUser } = useStateContext();
@@ -171,7 +162,7 @@ function StickyNavbar() {
             </li>
             <li>
               <Link
-                to="/LimitedEdition"
+                to="/limited-edition"
                 className="font-cinzel  text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
               >
                 Limited Edition
@@ -179,7 +170,7 @@ function StickyNavbar() {
             </li>
 
             <Link
-              to="/MenWatchTab"
+              to="/mens-watch"
               className="font-cinzel  text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
             >
               Men
@@ -187,7 +178,7 @@ function StickyNavbar() {
 
             <li>
               <Link
-                to="/WomenWatchTab"
+                to="/womens-watch"
                 className="font-cinzel text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
               >
                 Women
@@ -195,7 +186,7 @@ function StickyNavbar() {
             </li>
             <li>
               <Link
-                to="/KidsWatchTab"
+                to="/kids-watch"
                 className="font-cinzel  text-gray-900 hover:bg-gray-100 hover:text-blue-700 dark:hover:bg-gray-700 dark:hover-text-white"
               >
                 Kids
@@ -237,7 +228,7 @@ function StickyNavbar() {
             <Link to="/cart">
             <Button     
               type="submit"
-              className="flex items-center justify-center gap-4 text-sm  border-none font-poppins" 
+              className="flex items-center justify-center gap-4 text-sm  border-none font-cinzel" 
               variant="outlined" 
             >
               <BsCart2 className="w-6 h-6"/>
@@ -247,7 +238,7 @@ function StickyNavbar() {
             <Button
               onClick={logout}
               type="submit"
-              className="rounded flex items-center justify-center gap-4 text-sm text-left bg-none border-none font-poppins"
+              className="rounded flex items-center justify-center gap-4 text-sm text-left bg-none border-none font-cinzel"
               variant="outlined" 
             >
               Logout

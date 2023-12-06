@@ -9,7 +9,27 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
+    public function removeCartItem($cart_id){
+        if(auth('sanctum')->check()){
+            $user_id = auth('sanctum')->user()->id;
+            $cartitem = Cart::where('id', $cart_id)->where('user_id', $user_id)->first();
 
+            if($cartitem){
+                $cartitem->delete();
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Item has been removed',
+                ]);
+            }else{
+
+            }
+        }else{
+            return response()->json([
+                'status' => 401,
+                'message' => 'Please Log In first',
+            ]);
+        }
+    }
     public function updateQuantity($cart_id, $scope){
         if(auth('sanctum')->check()){
             $user_id = auth('sanctum')->user()->id;

@@ -87,4 +87,6 @@ Route::get('/cart', [CartController::class, 'viewCart'])
 Route::put('/cart-update-quantity/{card_id}/{scope}', [CartController::class, 'updateQuantity'])
                 ->middleware('guest')
                 ->name('cart-update-quantity');
-             
+Route::delete('/delete-cartitem/{card_id}', [CartController::class, 'removeCartItem'])
+                ->middleware('guest')
+                ->name('delete-cartitem');

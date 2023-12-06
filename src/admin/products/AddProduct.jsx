@@ -129,7 +129,7 @@ const AddProduct = () => {
         <div className="flex justify-between h-24 justify-center items-center px-4 md:px-12 font-sans">
           <h1 className="text-2xl font-semibold">ADD PRODUCTS</h1>
           <div>
-            <Link to="/admin/add-category">
+            <Link to="/admin/view-product">
               <Button className="flex items-center justify-center bg-matte">
                 <GrFormViewHide className="h-6 w-6 mr-2" />
                 View Products

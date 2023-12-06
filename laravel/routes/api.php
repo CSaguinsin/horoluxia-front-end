@@ -27,6 +27,8 @@ Route::get('/product-details/{category_slug}/{product_slug}', [FrontEndControlle
 Route::post('/add-to-cart', [CartController::class, 'addtocart']);
 Route::get('/cart', [CartController::class, 'viewCart']);
 Route::put('/cart-update-quantity/{card_id}/{scope}', [CartController::class, 'updateQuantity']);
+Route::delete('/delete-cartitem/{cart_id}', [CartController::class, 'removeCartItem']);
+
 
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
