@@ -253,8 +253,8 @@ function StickyNavbar() {
             >
               <Button
                 type="submit"
-              className="rounded flex items-center justify-center gap-4 text-sm text-left bg-none border-none font-poppins"
-              >
+                className="rounded flex items-center justify-center gap-4 text-sm text-left bg-none border-none font-cinzel"
+                variant="outlined">
                 Sign Up
               </Button>
             </Link>

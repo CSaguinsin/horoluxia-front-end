@@ -13,14 +13,8 @@ import axios from "../api/axios";
 import { Link } from "react-router-dom";
 import Add10 from "../assets/MensWatch/MensWatches1.jpg";
 import { FaArrowRight } from "react-icons/fa";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
+import { Card, CardHeader, Button } from "@material-tailwind/react";
+
 function Home() {
   const { user, getUser } = useStateContext();
   useEffect(() => {
@@ -112,13 +106,15 @@ function Home() {
               <h1 className="text-5xl font-bold" id="HeroTitle">
                 Get 5% Cash Back
               </h1>
-              <p className="py-6" id="Fonts">
+              <p className="text-base md:text-lg text-slate-700 my-4 md:my-6 font-poppins">
                 Earn 5% cash back on everyday purchases <br /> a smart way to
                 save and enjoy extra money in your pocket!
               </p>
-              <button className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-                Buy Now
-              </button>
+              <Link path="/mens-watch">
+                <Button className="rounded-full px-10  font-poppins">
+                  Buy Now
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -128,3 +124,4 @@ function Home() {
 }
 
 export default Home;
+  
