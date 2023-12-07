@@ -1,127 +1,127 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from 'react-router-dom';
-import '../Css/Style.css';
-import Navbar from './Navbar';
-import HeroSection from './HeroSection';
+import "../Css/Style.css";
+import StickyNavbar from "./Navbar";
+import HeroSection from "./HeroSection";
 import { useStateContext } from "../context/ContextProvider";
-import Add10 from '../assets/Pictures/Add10.jpg';
-import LimitedEdition from './LimitedEdition';
-import Men from './Men';
-import Women from './Women';
-import Kids from './Kids';
-import Countdown from './Countdown';
+import LimitedEdition from "./LimitedEdition";
+import Men from "./Men";
+import Women from "./Women";
+import Kids from "./Kids";
+import Countdown from "./Countdown";
 import SearchItem from "./SearchItem";
-import LastSection from '../assets/Logo/LastSection.png'; // Resolved conflict
-
+import axios from "../api/axios";
+import { Link } from "react-router-dom";
+import Add10 from "../assets/MensWatch/MensWatches1.jpg";
+import { FaArrowRight } from "react-icons/fa";
+import { Card, CardHeader, Button } from "@material-tailwind/react";
 
 function Home() {
-  
-  const limited = {
-    padding: '0 50px',
-    display: 'flex',
-    flexDirection: 'row',
-    paddingTop: '20px',
-  };
-
-  const Img = {
-    height: '25rem',
-    marginRight: '50px',
-    width: '19.5rem',
-  };
-
-  const SecondStyleWatch ={
-    height: '27rem',
-    marginRight: '62px',
-    width: '29rem',
-  }
-
-  const Sections = {
-    marginLeft: '40px',
-    paddingTop: '50px',
-  }
-
-  const SeeMoreTitle = {
-    color: 'black',
-    fontSize: '3rem',
-    fontWeight: 'bold',
-    marginLeft: '50px',
-    marginTop: '50px',
-    fontFamily: 'DM Serif Display, serif'
-  };
-  const { user, getUser} = useStateContext();
+  const { user, getUser } = useStateContext();
   useEffect(() => {
     if (!user) {
       getUser();
     }
   }, []);
 
-  const DivBg = {
-    backgroundColor: '#DADDE2',
-    paddingBottom: '50px',
-  };
-  
+  const [category, setCategory] = useState([]);
+  useEffect(() => {
+    axios.get(`/api/get-category`).then((res) => {
+      if (res.data.status === 200) {
+        setCategory(res.data.category);
+      }
+    });
+  });
+
   return (
-    <>
+    <div>
       <header className="header">
-        <p>Free shipping until 2025</p>
         <Countdown />
       </header>
-        <Navbar />
-    <section>
-      <div style={DivBg}>
+      <StickyNavbar />
+      <section>
         <HeroSection />
         <SearchItem />
+      </section>
+      <div>
+        {category.map((item, idx) => {
+          return (
+            <div className="w-full max-w-6xl mx-auto mb-12" key={idx}>
+              <div className="flex justify-between items-center">
+                <h1 className="text-4xl my-12 mb-8 font-extrabold font-horoluxia">
+                  {item.name}
+                </h1>
+                <Link to={`/${item.slug}`}>
+                  <Button
+                    variant="outlined"
+                    type="submit"
+                    className="rounded flex items-center justify-center gap-4 text-sm text-left bg-none border-none"
+                  >
+                    View More
+                    <FaArrowRight className="h-4 w-4 text-center" />
+                  </Button>
+                </Link>
+              </div>
+              <div className="bg-[#FBF0E4]">
+                <Card className="rounded-none p-2">
+                  <CardHeader
+                    shadow={false}
+                    floated={false}
+                    className="rounded-none m-0"
+                  >
+                    <img
+                      src={`http://localhost:8000/${item.banner}`}
+                      alt="card-image"
+                      className="rounded-none"
+                    />
+                  </CardHeader>
+                </Card>
+              </div>
+              <div class="flex-1 text-gray-700 text-center bg-gray-400"></div>
+            </div>
+          );
+        })}
       </div>
-        <section style={Sections}> 
-            <h1 style={SeeMoreTitle}>
-              <Link to='/LimitedEdition'>
-                Limited Editions
+
+      <section>
+        <LimitedEdition />
+      </section>
+
+      <section>
+        <Men />
+      </section>
+
+      <section>
+        <Women />
+      </section>
+
+      <section>
+        <Kids />
+      </section>
+
+      <section>
+        <div className="hero min-h-screen">
+          <div className="hero-content flex-col lg:flex-row-reverse">
+            <img src={Add10} />
+            <div>
+              <h1 className="text-5xl font-bold" id="HeroTitle">
+                Get 5% Cash Back
+              </h1>
+              <p className="text-base md:text-lg text-slate-700 my-4 md:my-6 font-poppins">
+                Earn 5% cash back on everyday purchases <br /> a smart way to
+                save and enjoy extra money in your pocket!
+              </p>
+              <Link path="/mens-watch">
+                <Button className="rounded-full px-10  font-poppins">
+                  Buy Now
+                </Button>
               </Link>
-            </h1>  
-              <div style={limited}>
-                  <LimitedEdition />
-              </div>
-        </section>
-
-        <section style={Sections}> 
-            <h1 style={SeeMoreTitle}>
-                <Link to='/MenWatchTab'>
-                Men
-                </Link>
-            </h1>
-              <div style={limited}>
-                  <Men />
-              </div>
-        </section>
-
-        <section style={Sections}>  
-            <h1 style={SeeMoreTitle}>
-                <Link to='/WomenWatchTab'>
-                Women
-                </Link>
-            </h1>
-               <div style={limited}>
-                  <Women />
-              </div>
-        </section>
-
-        <section style={Sections}> 
-            <h1 style={SeeMoreTitle}>
-                <Link to='/KidsWatchTab'>
-                Kids
-                </Link>
-            </h1>
-              <div style={limited}>
-                  <Kids />
-              </div>
-        </section>
-
-        <section>
-           <img src={LastSection} alt="LastSection" style={{width: '100%'}}/>
-        </section>
-        </section>
-    </>
-  )
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }
 
-export default Home
+export default Home;
+  

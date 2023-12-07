@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
 // Women Watch
-import WomensWatch1 from '../assets/WomensWatch/WomensWatch1.jpg';
-import WomensWatch2 from '../assets/WomensWatch/WomensWatch2.jpg';
-import WomensWatch3 from '../assets/WomensWatch/WomensWatch3.jpg';
-import WomensWatch4 from '../assets/WomensWatch/WomensWatch4.jpg';
+import WomensWatch1 from "../assets/WomensWatch/WomensWatch1.jpg";
+import WomensWatch2 from "../assets/WomensWatch/WomensWatch2.jpg";
+import WomensWatch3 from "../assets/WomensWatch/WomensWatch3.jpg";
+import WomensWatch4 from "../assets/WomensWatch/WomensWatch4.jpg";
+import { CiHeart } from "react-icons/ci";
+import { CiShoppingCart } from "react-icons/ci";
+import { FaArrowRight } from "react-icons/fa";
 import {
   Card,
   CardHeader,
@@ -11,174 +14,204 @@ import {
   CardFooter,
   Typography,
   Button,
+  IconButton,
 } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 function Women() {
   const ImgStyle = {
-    height: '30rem',
-    marginRight: '50px',
-    width: '19rem',
-};
-const Width = {
-    width: '100%',
-};
+    height: "30rem",
+    marginRight: "50px",
+    width: "19rem",
+  };
+  const Width = {
+    width: "100%",
+  };
   return (
-    <>
-<section style={ImgStyle} id='Fonts' className='FirstSection'>
-<Card style={ImgStyle} id='Fonts' className="w-96">
-      <CardHeader shadow={false} floated={false} className="h-96">
-        <img
-          src={WomensWatch1}
-          alt="card-image"
-          className="h-full w-full object-cover"
-        />
-      </CardHeader>
-      <CardBody>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
-          Serenity Bloom
-          </Typography>
-          <Typography color="blue-gray" className="font-medium">
-            $95.00
-          </Typography>
+    <div className="w-full max-w-6xl mx-auto mb-12 ">
+      <div className="flex justify-between items-center">
+        <h1 className="text-4xl my-12 mb-8 font-extrabold titleHead">Women</h1>
+        <Link to="/womens-watch">
+          <Button
+            variant="outlined"
+            type="submit"
+            className="rounded flex items-center justify-center gap-4 text-sm text-left bg-none border-none"
+          >
+            View More
+            <FaArrowRight className="h-4 w-4 text-center" />
+          </Button>
+        </Link>
+      </div>
+      <div className="bg-[#FBF0E4]">
+        <div class="flex gap-4 bg-[#FBF0E4] p-6">
+          <div class="flex-1 text-gray-700 text-center bg-gray-400">
+            <Card className="rounded-none p-2 bg-[#FBF0E4] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+              <CardHeader
+                shadow={false}
+                floated={false}
+                className="rounded-none m-0"
+              >
+                <img
+                  src={WomensWatch1}
+                  alt="card-image"
+                  className="rounded-none"
+                />
+              </CardHeader>
+              <CardBody className="p-2">
+                <div className="flex flex-col items-start">
+                  <Typography color="black" className="font-poppins">
+                    Women's Grace Watch
+                  </Typography>
+                  <Typography color="black" className="font-poppins">
+                    Horoluxia
+                  </Typography>
+                  <Typography
+                    color="black"
+                    className="font-poppins text-xl font-semibold"
+                  >
+                    {"₱ " + 4000}
+                  </Typography>
+                </div>
+              </CardBody>
+              <CardFooter className="w-full  p-0 flex justify-between">
+                <IconButton variant="outlined" className="border-none">
+                  <CiHeart className="h-8 w-8" />
+                </IconButton>
+                <Link to={`/womens-watch`}>
+                  <IconButton variant="outlined" className="border-none">
+                    <CiShoppingCart className="h-8 w-8" />
+                  </IconButton>
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
+          <div class="flex-1 text-gray-700 text-center bg-gray-400">
+            <Card className="rounded-none p-2 bg-[#FBF0E4] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+              <CardHeader
+                shadow={false}
+                floated={false}
+                className="rounded-none m-0"
+              >
+                <img
+                  src={WomensWatch2}
+                  alt="card-image"
+                  className="rounded-none"
+                />
+              </CardHeader>
+              <CardBody className="p-2">
+                <div className="flex flex-col items-start">
+                  <Typography color="black" className="font-poppins">
+                    Women's Youthful Watch
+                  </Typography>
+                  <Typography color="black" className="font-poppins">
+                    Horoluxia
+                  </Typography>
+                  <Typography
+                    color="black"
+                    className="font-poppins text-xl font-semibold"
+                  >
+                    {"₱ " + 6000}
+                  </Typography>
+                </div>
+              </CardBody>
+              <CardFooter className="w-full  p-0 flex justify-between">
+                <IconButton variant="outlined" className="border-none">
+                  <CiHeart className="h-8 w-8" />
+                </IconButton>
+                <Link to={`/womens-watch`}>
+                  <IconButton variant="outlined" className="border-none">
+                    <CiShoppingCart className="h-8 w-8" />
+                  </IconButton>
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
+          <div class="flex-1 text-gray-700 text-center bg-gray-400">
+            <Card className="rounded-none p-2 bg-[#FBF0E4] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+              <CardHeader
+                shadow={false}
+                floated={false}
+                className="rounded-none m-0"
+              >
+                <img
+                  src={WomensWatch3}
+                  alt="card-image"
+                  className="rounded-none"
+                />
+              </CardHeader>
+              <CardBody className="p-2">
+                <div className="flex flex-col items-start">
+                  <Typography color="black" className="font-poppins">
+                    Women's Blossom Watch
+                  </Typography>
+                  <Typography color="black" className="font-poppins">
+                    Horoluxia
+                  </Typography>
+                  <Typography
+                    color="black"
+                    className="font-poppins text-xl font-semibold"
+                  >
+                    {"₱ " + 8000}
+                  </Typography>
+                </div>
+              </CardBody>
+              <CardFooter className="w-full  p-0 flex justify-between">
+                <IconButton variant="outlined" className="border-none">
+                  <CiHeart className="h-8 w-8" />
+                </IconButton>
+                <Link to={`/womens-watch`}>
+                  <IconButton variant="outlined" className="border-none">
+                    <CiShoppingCart className="h-8 w-8" />
+                  </IconButton>
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
+          <div class="flex-1 text-gray-700 text-center bg-gray-400">
+            <Card className="rounded-none p-2 bg-[#FBF0E4] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+              <CardHeader
+                shadow={false}
+                floated={false}
+                className="rounded-none m-0"
+              >
+                <img
+                  src={WomensWatch4}
+                  alt="card-image"
+                  className="rounded-none"
+                />
+              </CardHeader>
+              <CardBody className="p-2">
+                <div className="flex flex-col items-start">
+                  <Typography color="black" className="font-poppins">
+                    Women's Harmony Watch
+                  </Typography>
+                  <Typography color="black" className="font-poppins">
+                    Horoluxia
+                  </Typography>
+                  <Typography
+                    color="black"
+                    className="font-poppins text-xl font-semibold"
+                  >
+                    {"₱ " + 6500}
+                  </Typography>
+                </div>
+              </CardBody>
+              <CardFooter className="w-full  p-0 flex justify-between">
+                <IconButton variant="outlined" className="border-none">
+                  <CiHeart className="h-8 w-8" />
+                </IconButton>
+                <Link to={`/womens-watch`}>
+                  <IconButton variant="outlined" className="border-none">
+                    <CiShoppingCart className="h-8 w-8" />
+                  </IconButton>
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
         </div>
-        <Typography
-          variant="small"
-          color="gray"
-          className="font-normal opacity-75"
-        >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-      <Button
-          ripple={false}
-          fullWidth={true}
-          className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
-</section>
-
-<section style={ImgStyle} id='Fonts' className='FirstSection'>
-<Card style={ImgStyle} id='Fonts' className="w-96">
-      <CardHeader shadow={false} floated={false} className="h-96">
-        <img
-          src={WomensWatch2}
-          alt="card-image"
-          className="h-full w-full object-cover"
-        />
-      </CardHeader>
-      <CardBody>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
-          Opaline Enigma
-          </Typography>
-          <Typography color="blue-gray" className="font-medium">
-            $95.00
-          </Typography>
-        </div>
-        <Typography
-          variant="small"
-          color="gray"
-          className="font-normal opacity-75"
-        >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-      <Button
-          ripple={false}
-          fullWidth={true}
-          className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
-</section>
-
-<section style={ImgStyle} id='Fonts' className='FirstSection'>
-<Card style={ImgStyle} id='Fonts' className="w-96">
-      <CardHeader shadow={false} floated={false} className="h-96">
-        <img
-          src={WomensWatch3}
-          alt="card-image"
-          className="h-full w-full object-cover"
-        />
-      </CardHeader>
-      <CardBody>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
-          Radiant Aurora
-          </Typography>
-          <Typography color="blue-gray" className="font-medium">
-            $95.00
-          </Typography>
-        </div>
-        <Typography
-          variant="small"
-          color="gray"
-          className="font-normal opacity-75"
-        >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-      <Button
-          ripple={false}
-          fullWidth={true}
-          className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
-</section>
-
-<section style={ImgStyle} id='Fonts' className='FirstSection'>
-<Card style={ImgStyle} id='Fonts' className="w-96">
-      <CardHeader shadow={false} floated={false} className="h-96">
-        <img
-          src={WomensWatch4}
-          alt="card-image"
-          className="h-full w-full object-cover"
-        />
-      </CardHeader>
-      <CardBody>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
-          Ethereal Whispers
-          </Typography>
-          <Typography color="blue-gray" className="font-medium">
-            $95.00
-          </Typography>
-        </div>
-        <Typography
-          variant="small"
-          color="gray"
-          className="font-normal opacity-75"
-        >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-      <Button
-          ripple={false}
-          fullWidth={true}
-          className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
-</section>
-
-    </>
-  )
+      </div>
+    </div>
+  );
 }
 
-
-export default Women
+export default Women;

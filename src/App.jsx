@@ -16,8 +16,11 @@ import { ContextProvider } from "./context/ContextProvider";
 import Women from "./Components/Women";
 import ResetPassword from "./Components/ResetPassword";
 import AdminHome from "./admin/pages/AdminHome";
-
-
+import ViewProduct from "./Components/ViewProduct";
+import ProductDetail from "./Components/ProductDetail";
+import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
+import Thankyou from "./Components/Thankyou";
 function App() {
   return (
     <ContextProvider>
@@ -28,10 +31,11 @@ function App() {
         <Route path="/women" element={<Women />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/password-reset/:token" element={<ResetPassword />} />
-        <Route path="/WomenWatchTab" element={<WomenWatchTab />} />
-        <Route path="/KidsWatchTab" element={<KidsWatchTab />} />
-        <Route path="/MenWatchTab" element={<MenWatchTab />} />
-        <Route path="/LimitedEdition" element={<LimitedEditionTab />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/thankyou" element={<Thankyou />} />
+        <Route path="/:slug" element={<ViewProduct />} />
+        <Route path="/:category_slug/:product_slug" element={<ProductDetail />} />
         <Route path="/admin/*" element={<AdminHome />} />
 
     </Routes>

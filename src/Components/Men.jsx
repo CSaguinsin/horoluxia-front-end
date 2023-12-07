@@ -1,8 +1,12 @@
-import React from 'react'
-import MenWatch1 from '../assets/MensWatch/MensWatches1.jpg';
-import MenWatch2 from '../assets/MensWatch/MensWatches2.jpg';
-import MenWatch3 from '../assets/MensWatch/MensWatches3.jpg';
-import MenWatch4 from '../assets/MensWatch/MensWatches4.jpg';
+import React from "react";
+import { Link } from "react-router-dom";
+import MenWatch1 from "../assets/MensWatch/MensWatches1.jpg";
+import MenWatch2 from "../assets/MensWatch/MensWatches2.jpg";
+import MenWatch3 from "../assets/MensWatch/MensWatches3.jpg";
+import MenWatch4 from "../assets/MensWatch/MensWatches4.jpg";
+import { CiHeart } from "react-icons/ci";
+import { CiShoppingCart } from "react-icons/ci";
+import { FaArrowRight } from "react-icons/fa";
 import {
   Card,
   CardHeader,
@@ -10,174 +14,203 @@ import {
   CardFooter,
   Typography,
   Button,
+  IconButton,
 } from "@material-tailwind/react";
 
-
 function Men() {
-    const ImgStyle = {
-      height: '30rem',
-      marginRight: '50px',
-      width: '19rem',
+  const ImgStyle = {
+    height: "30rem",
+    marginRight: "50px",
+    width: "19rem",
   };
   const Width = {
-      width: '100%',
+    width: "100%",
   };
   return (
-    <>
-<section style={ImgStyle} id='Fonts' className='FirstSection'>
-<Card style={ImgStyle} id='Fonts' className="w-96">
-      <CardHeader shadow={false} floated={false} className="h-96">
-        <img
-          src={MenWatch1}
-          alt="card-image"
-          className="h-full w-full object-cover"
-        />
-      </CardHeader>
-      <CardBody>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
-          Vanguard Sentinel
-          </Typography>
-          <Typography color="blue-gray" className="font-medium">
-            $95.00
-          </Typography>
+    <div className="w-full max-w-6xl mx-auto mb-12 ">
+      <div className="flex justify-between items-center">
+        <h1 className="text-4xl my-12 mb-8 font-extrabold titleHead">Men</h1>
+        <Link to="/mens-watch">
+          <Button
+            variant="outlined"
+            type="submit"
+            className="rounded flex items-center justify-center gap-4 text-sm text-left bg-none border-none"
+          >
+            View More
+            <FaArrowRight className="h-4 w-4 text-center" />
+          </Button>
+        </Link>
+      </div>
+      <div className="bg-[#FBF0E4]">
+        <div class="flex gap-4 bg-[#FBF0E4] p-6">
+          <div class="flex-1 text-gray-700 text-center bg-gray-400">
+            <Card className="rounded-none p-2 bg-[#FBF0E4] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+              <CardHeader
+                shadow={false}
+                floated={false}
+                className="rounded-none m-0"
+              >
+                <img
+                  src={MenWatch1}
+                  alt="card-image"
+                  className="rounded-none"
+                />
+              </CardHeader>
+              <CardBody className="p-2">
+                <div className="flex flex-col items-start">
+                  <Typography color="black" className="font-poppins">
+                    Men's Supreme Watch
+                  </Typography>
+                  <Typography color="black" className="font-poppins">
+                    Horoluxia
+                  </Typography>
+                  <Typography
+                    color="black"
+                    className="font-poppins text-xl font-semibold"
+                  >
+                    {"₱ " + 8000}
+                  </Typography>
+                </div>
+              </CardBody>
+              <CardFooter className="w-full  p-0 flex justify-between">
+                <IconButton variant="outlined" className="border-none">
+                  <CiHeart className="h-8 w-8" />
+                </IconButton>
+                <Link to={`/mens-watch`}>
+                  <IconButton variant="outlined" className="border-none">
+                    <CiShoppingCart className="h-8 w-8" />
+                  </IconButton>
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
+          <div class="flex-1 text-gray-700 text-center bg-gray-400">
+            <Card className="rounded-none p-2 bg-[#FBF0E4] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+              <CardHeader
+                shadow={false}
+                floated={false}
+                className="rounded-none m-0"
+              >
+                <img
+                  src={MenWatch2}
+                  alt="card-image"
+                  className="rounded-none"
+                />
+              </CardHeader>
+              <CardBody className="p-2">
+                <div className="flex flex-col items-start">
+                  <Typography color="black" className="font-poppins">
+                    Nen's Youthful Watch
+                  </Typography>
+                  <Typography color="black" className="font-poppins">
+                    Horoluxia
+                  </Typography>
+                  <Typography
+                    color="black"
+                    className="font-poppins text-xl font-semibold"
+                  >
+                    {"₱ " + 6600}
+                  </Typography>
+                </div>
+              </CardBody>
+              <CardFooter className="w-full  p-0 flex justify-between">
+                <IconButton variant="outlined" className="border-none">
+                  <CiHeart className="h-8 w-8" />
+                </IconButton>
+                <Link to={`/mens-watch`}>
+                  <IconButton variant="outlined" className="border-none">
+                    <CiShoppingCart className="h-8 w-8" />
+                  </IconButton>
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
+          <div class="flex-1 text-gray-700 text-center bg-gray-400">
+            <Card className="rounded-none p-2 bg-[#FBF0E4] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+              <CardHeader
+                shadow={false}
+                floated={false}
+                className="rounded-none m-0"
+              >
+                <img
+                  src={MenWatch3}
+                  alt="card-image"
+                  className="rounded-none"
+                />
+              </CardHeader>
+              <CardBody className="p-2">
+                <div className="flex flex-col items-start">
+                  <Typography color="black" className="font-poppins">
+                    Men's Petite Watch
+                  </Typography>
+                  <Typography color="black" className="font-poppins">
+                    Horoluxia
+                  </Typography>
+                  <Typography
+                    color="black"
+                    className="font-poppins text-xl font-semibold"
+                  >
+                    {"₱ " + 7800}
+                  </Typography>
+                </div>
+              </CardBody>
+              <CardFooter className="w-full  p-0 flex justify-between">
+                <IconButton variant="outlined" className="border-none">
+                  <CiHeart className="h-8 w-8" />
+                </IconButton>
+                <Link to={`/mens-watch`}>
+                  <IconButton variant="outlined" className="border-none">
+                    <CiShoppingCart className="h-8 w-8" />
+                  </IconButton>
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
+          <div class="flex-1 text-gray-700 text-center bg-gray-400">
+            <Card className="rounded-none p-2 bg-[#FBF0E4] transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300">
+              <CardHeader
+                shadow={false}
+                floated={false}
+                className="rounded-none m-0"
+              >
+                <img
+                  src={MenWatch4}
+                  alt="card-image"
+                  className="rounded-none"
+                />
+              </CardHeader>
+              <CardBody className="p-2">
+                <div className="flex flex-col items-start">
+                  <Typography color="black" className="font-poppins">
+                    Men's Adventure Watch
+                  </Typography>
+                  <Typography color="black" className="font-poppins">
+                    Horoluxia
+                  </Typography>
+                  <Typography
+                    color="black"
+                    className="font-poppins text-xl font-semibold"
+                  >
+                    {"₱ " + 1300}
+                  </Typography>
+                </div>
+              </CardBody>
+              <CardFooter className="w-full  p-0 flex justify-between">
+                <IconButton variant="outlined" className="border-none">
+                  <CiHeart className="h-8 w-8" />
+                </IconButton>
+                <Link to={`/mens-watch`}>
+                  <IconButton variant="outlined" className="border-none">
+                    <CiShoppingCart className="h-8 w-8" />
+                  </IconButton>
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
         </div>
-        <Typography
-          variant="small"
-          color="gray"
-          className="font-normal opacity-75"
-        >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-      <Button
-          ripple={false}
-          fullWidth={true}
-          className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
-</section>
-
-
-<section style={ImgStyle} id='Fonts' className='FirstSection'>
-<Card style={ImgStyle} id='Fonts' className="w-96">
-      <CardHeader shadow={false} floated={false} className="h-96">
-        <img
-          src={MenWatch2}
-          alt="card-image"
-          className="h-full w-full object-cover"
-        />
-      </CardHeader>
-      <CardBody>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
-          Apex Stratosphere
-          </Typography>
-          <Typography color="blue-gray" className="font-medium">
-            $95.00
-          </Typography>
-        </div>
-        <Typography
-          variant="small"
-          color="gray"
-          className="font-normal opacity-75"
-        >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-      <Button
-          ripple={false}
-          fullWidth={true}
-          className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
-</section>
-
-<section style={ImgStyle} id='Fonts' className='FirstSection'>
-<Card style={ImgStyle} id='Fonts' className="w-96">
-      <CardHeader shadow={false} floated={false} className="h-96">
-        <img
-          src={MenWatch3}
-          alt="card-image"
-          className="h-full w-full object-cover"
-        />
-      </CardHeader>
-      <CardBody>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
-          Titanium Arcane
-          </Typography>
-          <Typography color="blue-gray" className="font-medium">
-            $95.00
-          </Typography>
-        </div>
-        <Typography
-          variant="small"
-          color="gray"
-          className="font-normal opacity-75"
-        >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-      <Button
-          ripple={false}
-          fullWidth={true}
-          className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
-</section>
-
-<section style={ImgStyle} id='Fonts' className='FirstSection'>
-<Card style={ImgStyle} id='Fonts' className="w-96">
-      <CardHeader shadow={false} floated={false} className="h-96">
-        <img
-          src={MenWatch4}
-          alt="card-image"
-          className="h-full w-full object-cover"
-        />
-      </CardHeader>
-      <CardBody>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
-          Stealth Horizon
-          </Typography>
-          <Typography color="blue-gray" className="font-medium">
-            $95.00
-          </Typography>
-        </div>
-        <Typography
-          variant="small"
-          color="gray"
-          className="font-normal opacity-75"
-        >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-      <Button
-          ripple={false}
-          fullWidth={true}
-          className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
-          Add to Cart
-        </Button>
-      </CardFooter>
-    </Card>
-</section>
-    </>
-  )
+      </div>
+    </div>
+  );
 }
 
-export default Men
+export default Men;

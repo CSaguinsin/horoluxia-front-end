@@ -3,6 +3,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import productData from "../product.json";
 import { Link } from "react-router-dom";
 import Categories from "./Categories";
+
 const SearchItem = () => {
   const [searchInput, setSearchInput] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(productData);
@@ -28,19 +29,19 @@ const SearchItem = () => {
   };
   return (
     <div className="max-w-4xl mx-auto mt-2">
-      <div className="shadow-md rounded-full  border-t">
+      <div className="shadow-md rounded-full border-t">
         <form
           className="flex flex-col md:flex-row items-center justify-center md:items-center flex-wrap"
           onSubmit={handleSubmit}
         >
-          <div className="mb-4 md:mb-0 md:mr-4">
+          <div className="mb-4 md:mb-0 md:mr-4  ">
             <Categories />
           </div>
           <div className="flex items-center flex-1">
             <input
               type="search"
               placeholder="Search"
-              className="w-full border-r-0 border-slate-500 px-3 h-14 focus:outline-none"
+              className="w-full border-r-0 border-slate-500 px-3 h-14 focus:outline-none border-0"
               value={searchInput}
               onChange={handleSearch}
             />

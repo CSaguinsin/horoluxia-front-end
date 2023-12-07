@@ -27,9 +27,9 @@ return new class extends Migration
             $table->decimal('original_price', 10,2);
             $table->integer('quantity');
             $table->string('image')->nullable();
-            $table->tinyInteger('featured')->default(0)->nullable();
-            $table->tinyInteger('popular')->default(0)->nullable();
-            $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('featured');
+            $table->tinyInteger('popular');
+            $table->tinyInteger('status');
             $table->timestamps();
         });
     }

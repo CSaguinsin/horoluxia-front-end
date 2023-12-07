@@ -7,6 +7,8 @@ import ViewCategory from "../category/ViewCategory";
 import EditCategory from "../category/EditCategory";
 import AddProduct from "../products/AddProduct";
 import ViewProduct from "../products/ViewProduct";
+import EditProduct from "../products/EditProduct";
+import ViewOrder from "../order/ViewOrder";
 // import { useNavigate } from 'react-router-dom';
 // import { useStateContext } from '../../context/ContextProvider';
 const AdminHome = () => {
@@ -32,6 +34,8 @@ const AdminHome = () => {
             <Route path="view-category/edit-category/:id" element={<EditCategory />} />
             <Route path="add-product" element={<AddProduct/>} />
             <Route path="view-product" element={<ViewProduct />} />
+            <Route path="view-order" element={<ViewOrder />} />
+            <Route path="view-product/edit-product/:id" element={<EditProduct />} />
             <Route path="/*" element={<Navigate to="dashboard" />} />
           </Routes>
         </main>

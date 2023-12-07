@@ -23,7 +23,9 @@
   left: 0;
   right: 0;
 }
-
+.titleHead{
+  font-family: 'DM Serif Display, serif'
+}
 .ulti {
   background-color: #FFFFF0;
 }

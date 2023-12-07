@@ -1,60 +1,51 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import '../Css/Style.css';
-import { useStateContext } from "../context/ContextProvider";
-import { useNavigate } from "react-router-dom";
-
-import Add1 from '../assets/Pictures/Add1.jpg';
-import Add2 from '../assets/Pictures/Add2.jpg';
-import Add3 from '../assets/Pictures/Add3.jpg';
-import Add4 from '../assets/Pictures/Add4.jpg';
-import Add5 from '../assets/Pictures/Add5.jpg';
-import Add6 from '../assets/Pictures/Add6.jpg';
-import Add7 from '../assets/Pictures/Add7.jpg';
-import Add8 from '../assets/Pictures/Add8.jpg';
-import Add9 from '../assets/Pictures/Add9.jpg';
-import Add10 from '../assets/Pictures/Add10.jpg';
-import Add11 from '../assets/Pictures/Add11.jpg';
-import Add12 from '../assets/Pictures/Add12.jpeg';
-import Add13 from '../assets/Pictures/Add13.jpg';
-import Add14 from '../assets/Pictures/Add14.jpg';
-import Add15 from '../assets/Pictures/Add15.jpg';
-import Add16 from '../assets/Pictures/Add16.jpg';
-
+import "../Css/Style.css";
+import { Link } from "react-router-dom";
+import { Button } from "@material-tailwind/react";
+import Add1 from "../assets/Pictures/Add1.jpg";
+import Add2 from "../assets/Pictures/Add2.jpg";
+import Add3 from "../assets/Pictures/Add3.jpg";
+import Add4 from "../assets/Pictures/Add4.jpg";
+import Add5 from "../assets/Pictures/Add5.jpg";
+import Add6 from "../assets/Pictures/Add6.jpg";
+import Add7 from "../assets/Pictures/Add7.jpg";
+import Add8 from "../assets/Pictures/Add8.jpg";
+import Add9 from "../assets/Pictures/Add9.jpg";
+import Add10 from "../assets/Pictures/Add10.jpg";
+import Add11 from "../assets/Pictures/Add11.jpg";
+import Add12 from "../assets/Pictures/Add12.jpeg";
+import Add13 from "../assets/Pictures/Add13.jpg";
+import Add14 from "../assets/Pictures/Add14.jpg";
+import Add15 from "../assets/Pictures/Add15.jpg";
+import Add16 from "../assets/Pictures/Add16.jpg";
 
 const HeroSection = () => {
-  const {userToken, user} = useStateContext();
-  const navigate = useNavigate();
-  const handleBuyNow = ()=> {
-    if (!userToken) {
-      navigate("/login"); 
-    }else{
-      navigate("/LimitedEdition")
-    }
-}
-
   return (
-    <section className="w-full px-8 py-12 grid grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto">
+    <section className="w-full grid p-8 grid-cols-1 md:grid-cols-2 items-center gap-8 max-w-6xl mx-auto mb-12 bg-[#FBF0E4]">
       <div>
-        <h3 className="text-4xl md:text-6xl font-semibold" id="HeroTitle">
+        <h3 className="text-2xl md:text-6xl" id="HeroTitle">
           Grab Up To 50% Off On Selected Watch
         </h3>
-        <p className="text-base md:text-lg text-slate-700 my-4 md:my-6" id="Fonts">
-            Here at Horoluxia we have a wide range of watches for you to choose from.
-          <br />
-            {user?.firstname}
+        <p
+          className="text-base md:text-lg text-slate-700 my-4 md:my-6 font-poppins"
+         
+        >
+          Here at Horoluxia we have a wide range of watches for you to choose
+          from.
         </p>
-        <button 
-        type="submit"
-        onClick={handleBuyNow}
-        className="px-6 py-2 font-medium bg-indigo-500 text-white w-fit transition-all shadow-[3px_3px_0px_black] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]">
+        <Link path="/limited-edition">
+        <Button
+          className="rounded-full px-10  font-poppins"
+        >
           Buy Now
-        </button>
+        </Button>
+        </Link>
       </div>
       <ShuffleGrid />
     </section>
   );
-}
+};
 
 const shuffle = (array) => {
   let currentIndex = array.length,
