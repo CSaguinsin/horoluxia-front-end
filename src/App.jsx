@@ -37,9 +37,11 @@ function App() {
         <Route path="/:slug" element={<ViewProduct />} />
         <Route path="/:category_slug/:product_slug" element={<ProductDetail />} />
         <Route path="/admin/*" element={<AdminHome />} />
-      </Routes>
-      {/* <NewsLetter />
-    <Footer /> */}
+
+    </Routes>
+    <NewsLetter />
+    <Footer />
+
     </ContextProvider>
   );
 }
