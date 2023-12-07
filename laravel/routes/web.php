@@ -13,9 +13,7 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/register', [RegisteredUserController::class, 'store']);
-Route::post('/login', [AuthenticatedSessionController::class, 'store']);
-// Route::post('/forgot-password', [PasswordResetLinkController::class, 'store']);
+// routes/web.php;
 Route::get('/', function () {
     return ['Laravel' => app()->version()];
 });
