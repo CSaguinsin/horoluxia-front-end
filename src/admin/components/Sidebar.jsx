@@ -23,7 +23,6 @@ const Sidebar = () => {
   // }
   const { logout } = useStateContext();
   const menus = [
-    { name: "Profile", link: "/admin/profile", icon: AiOutlineUser },
     { name: "Dashboard", link: "/admin/dashboard", icon: AiOutlineDashboard },
     { name: "CATEGORY", link: "", icon: BiCategoryAlt, margin: true, hr: true },
     { name: "Add Category", link: "/admin/add-category", icon: IoMdAdd },
